@@ -1,8 +1,26 @@
+require "graphql/client"
+require "graphql/client/http"
+
+# GnCrossmap::test
 module GnCrossmap
+  HTTP = GraphQL::Client::HTTP.new("http://gnresolver.globalnames.org/api/graphql")
+  SCHEMA = GraphQL::Client.load_schema(HTTP)
+  CLIENT = GraphQL::Client.new(schema: SCHEMA, execute: HTTP)
+
+  NAME_RESOLVERS_QUERY = CLIENT.parse <<-'GRAPHQL'
+      query($names: [name!]!, $dataSourceIds: [Int!]) {
+        nameResolvers(names: $names, dataSourceIds: $dataSourceIds) {
+          total suppliedId suppliedInput
+          results {
+            name { name } canonicalName { name } matchType { value score }
+            taxonId classification { pathRanks }
+          }
+        }
+      }
+  GRAPHQL
+
   # Sends data to GN Resolver and collects results
   class Resolver
-    URL = "http://resolver.globalnames.org/name_resolvers.json".freeze
-
     def initialize(writer, data_source_id, stats)
       @stats = stats
       @processor = GnCrossmap::ResultProcessor.new(writer, @stats)
@@ -25,7 +43,8 @@ module GnCrossmap
       cmd = nil
       data.each_slice(@batch) do |slice|
         with_log do
-          remote_resolve(collect_names(slice))
+          collect_names(slice)
+          remote_resolve(slice)
           cmd = yield(@stats.stats) if block_given?
         end
         break if cmd == "STOP"
@@ -48,25 +67,30 @@ module GnCrossmap
       s = @count + 1
       @count += @batch
       e = [@count, @stats.stats[:total_records]].min
-      GnCrossmap.log("Resolve #{s}-#{e} out of " \
-                     "#{@stats.stats[:total_records]} records")
+      GnCrossmap.log("Resolve #{s}-#{e} out of #{@stats.stats[:total_records]} records")
       yield
     end
 
     def collect_names(slice)
       @current_data = {}
-      slice.each_with_object("") do |row, str|
+      slice.each do |row|
         id = row[:id].strip
         @current_data[id] = row[:original]
         @processor.input[id] = { rank: row[:rank] }
-        str << "#{id}|#{row[:name]}\n"
       end
+    end
+
+    def variables(names)
+      {
+        dataSourceIds: [@ds_id],
+        names: names.map { |name| { value: name[:name], suppliedId: name[:id] } }
+      }
     end
 
     def remote_resolve(names)
       batch_start = Time.now
-      res = RestClient.post(URL, data: names, data_source_ids: @ds_id)
-      @processor.process(res, @current_data)
+      res = CLIENT.query(NAME_RESOLVERS_QUERY, variables: variables(names))
+      @processor.process(res.data.nameResolvers, @current_data)
     rescue RestClient::Exception
       single_remote_resolve(names)
     ensure

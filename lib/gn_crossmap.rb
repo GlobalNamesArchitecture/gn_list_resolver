@@ -20,16 +20,7 @@ require "gn_crossmap/stats"
 module GnCrossmap
   INPUT_MODE = "r:utf-8".freeze
   OUTPUT_MODE = "w:utf-8".freeze
-  MATCH_TYPES = {
-    0 => "No match",
-    1 => "Exact string match",
-    2 => "Canonical form exact match",
-    3 => "Canonical form fuzzy match",
-    4 => "Partial canonical form match",
-    5 => "Partial canonical form fuzzy match",
-    6 => "Genus part match",
-    7 => "Error in matching"
-  }.freeze
+  MATCH_TYPE_EMPTY = "EmptyMatch".freeze
 
   class << self
     attr_writer :logger

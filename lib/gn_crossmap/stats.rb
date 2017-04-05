@@ -10,17 +10,8 @@ module GnCrossmap
                  resolved_records: 0, ingestion_span: nil,
                  resolution_span: nil, ingestion_start: nil,
                  resolution_start: nil, resolution_stop: nil,
-                 last_batches_time: [], matches: match_types,
+                 last_batches_time: [], matches: Hash.new(0),
                  errors: [] }
-    end
-
-    private
-
-    def match_types
-      matches = GnCrossmap::MATCH_TYPES.keys
-      matches.each_with_object({}) do |key, obj|
-        obj[key] = 0
-      end
     end
   end
 end

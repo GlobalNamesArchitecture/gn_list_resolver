@@ -83,7 +83,7 @@ describe "features" do
                data_source_id: 1, skip_original: true }
       GnCrossmap.run(opts) { "STOP" }
       lines_num = File.readlines(opts[:output]).size
-      expect(lines_num).to be 201
+      expect(lines_num).to be 217
       FileUtils.rm(opts[:output])
     end
   end
