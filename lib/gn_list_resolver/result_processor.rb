@@ -1,4 +1,4 @@
-module GnCrossmap
+module GnListResolver
   # Processes data received from the GN Resolver
   class ResultProcessor
     attr_reader :input, :writer
@@ -23,10 +23,10 @@ module GnCrossmap
     end
 
     def write_empty_result(datum)
-      @stats.stats[:matches][GnCrossmap::MATCH_TYPE_EMPTY] += 1
+      @stats.stats[:matches][GnListResolver::MATCH_TYPE_EMPTY] += 1
       @stats.stats[:resolved_records] += 1
       res = @original_data[datum.supplied_id]
-      res += [GnCrossmap::MATCH_TYPE_EMPTY, datum.suppliedInput, nil,
+      res += [GnListResolver::MATCH_TYPE_EMPTY, datum.suppliedInput, nil,
               nil,
               nil, # @input[datum[:supplied_id]][:rank] - rank is not supported yet
               nil,
@@ -43,7 +43,7 @@ module GnCrossmap
 
     def collect_stats(datum)
       match_type_min = datum.results.min_by { |d| d.matchType.score }
-      match_type_value = if match_type_min.nil? then GnCrossmap::MATCH_TYPE_EMPTY
+      match_type_value = if match_type_min.nil? then GnListResolver::MATCH_TYPE_EMPTY
                          else match_type_min.matchType.value
                          end
       # stats_matches = @stats.stats[:matches].fetch(match_type_value, 0) + 1

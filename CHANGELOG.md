@@ -1,4 +1,4 @@
-# ``gn_crossmap`` CHANGELOG
+# ``gn_list_resolver`` CHANGELOG
 
 ## 2.2.3
 

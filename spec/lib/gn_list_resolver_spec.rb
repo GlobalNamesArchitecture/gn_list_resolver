@@ -1,5 +1,5 @@
-describe GnCrossmap do
-  subject { GnCrossmap }
+describe GnListResolver do
+  subject { GnListResolver }
 
   describe ".version" do
     it "has a version number" do
@@ -15,7 +15,7 @@ describe GnCrossmap do
         data_source_id: 1,
         skip_original: false }
     end
-    it "runs crossmapping" do
+    it "runs list resolving" do
       expect(subject.run(opts)).
         to eq opts[:output]
     end
@@ -56,7 +56,7 @@ describe GnCrossmap do
       let(:opts4) { opts.merge(input: FILES[:no_taxonid]) }
       it "raises an error" do
         expect { subject.run(opts4) }.
-          to raise_error GnCrossmapError
+          to raise_error GnListResolverError
       end
     end
 

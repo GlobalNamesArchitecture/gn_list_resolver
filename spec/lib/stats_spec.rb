@@ -1,8 +1,8 @@
-describe GnCrossmap::Stats do
-  subject { GnCrossmap::Stats }
+describe GnListResolver::Stats do
+  subject { GnListResolver::Stats }
   describe ".new" do
     it "creates an instance" do
-      expect(subject.new).to be_kind_of GnCrossmap::Stats
+      expect(subject.new).to be_kind_of GnListResolver::Stats
     end
   end
 end

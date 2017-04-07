@@ -5,19 +5,19 @@ require "tempfile"
 require "logger"
 require "logger/colors"
 require "biodiversity"
-require "gn_crossmap/errors"
-require "gn_crossmap/version"
-require "gn_crossmap/reader"
-require "gn_crossmap/writer"
-require "gn_crossmap/collector"
-require "gn_crossmap/column_collector"
-require "gn_crossmap/sci_name_collector"
-require "gn_crossmap/resolver"
-require "gn_crossmap/result_processor"
-require "gn_crossmap/stats"
+require "gn_list_resolver/errors"
+require "gn_list_resolver/version"
+require "gn_list_resolver/reader"
+require "gn_list_resolver/writer"
+require "gn_list_resolver/collector"
+require "gn_list_resolver/column_collector"
+require "gn_list_resolver/sci_name_collector"
+require "gn_list_resolver/resolver"
+require "gn_list_resolver/result_processor"
+require "gn_list_resolver/stats"
 
-# Namespace module for crossmapping checklists wth GN sources
-module GnCrossmap
+# Namespace module for resolving lists with GN sources
+module GnListResolver
   INPUT_MODE = "r:utf-8".freeze
   OUTPUT_MODE = "w:utf-8".freeze
   MATCH_TYPE_EMPTY = "EmptyMatch".freeze

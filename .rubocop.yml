@@ -4,7 +4,7 @@ AllCops:
     - bundle_bin/**/*
     - spec/**/*
   Include:
-    - exe/crossmap
+    - exe/list_resolver
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 Style/DotPosition:

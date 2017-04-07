@@ -1,4 +1,4 @@
-describe GnCrossmap::ResultProcessor do
-  let(:writer) { GnCrossmap::Writer.new(FILES[:output]) }
-  subject { GnCrossmap::ResultProcessor.new(writer) }
+describe GnListResolver::ResultProcessor do
+  let(:writer) { GnListResolver::Writer.new(FILES[:output]) }
+  subject { GnListResolver::ResultProcessor.new(writer) }
 end

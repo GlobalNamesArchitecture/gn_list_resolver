@@ -1,4 +1,4 @@
-module GnCrossmap
+module GnListResolver
   # Reads supplied csv file and creates ruby structure to compare
   # with a Global Names Resolver source
   class Reader
@@ -18,7 +18,7 @@ module GnCrossmap
     def read
       @stats.stats[:ingestion_start] = Time.now
       @stats.stats[:status] = :ingestion
-      GnCrossmap.log("Read input from #{@input_name}")
+      GnListResolver.log("Read input from #{@input_name}")
       block_given? ? parse_input(&Proc.new) : parse_input
     end
 
@@ -76,7 +76,7 @@ module GnCrossmap
 
     def log_progress(count)
       return false unless (count % 1_000).zero?
-      GnCrossmap.log("Ingesting csv row #{count + 1}")
+      GnListResolver.log("Ingesting csv row #{count + 1}")
       @stats.stats[:ingested_records] = count + 1
       @stats.stats[:ingestion_span] = Time.now - @stats.stats[:ingestion_start]
       true

@@ -16,5 +16,5 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard :rspec, cmd: 'bundle exec rspec' do
-  watch(%r{^lib/gn_crossmap/(.+)\.rb$}) { |m| "spec/lib/#{m[1]}_spec.rb" }
+  watch(%r{^lib/gn_list_resolver/(.+)\.rb$}) { |m| "spec/lib/#{m[1]}_spec.rb" }
 end

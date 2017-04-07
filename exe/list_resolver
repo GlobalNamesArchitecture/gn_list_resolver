@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "trollop"
-require "gn_crossmap"
+require "gn_list_resolver"
 
 puts "This program requires Ruby >= v. 2.1.0" if RUBY_VERSION < "2.1.0"
 
@@ -9,7 +9,7 @@ OUTPUT = "output.csv".freeze
 opts = Trollop.options do
   banner "Compares a list of scientific names to scientific names from a " \
     "data source from Global Names Resolver\n\n " \
-    "Usage:\n  crossmap [options]\n\noptions:" \
+    "Usage:\n  list_resolver [options]\n\noptions:" \
     "\n\n  ('-i -' reads from STDIN; '-o -' writes to STDOUT)\n\n"
 
   opt(:input, "Path to input file", type: :string)
@@ -26,7 +26,7 @@ unless File.exist?(opts[:input]) || opts[:input] == "-"
 end
 
 begin
-  GnCrossmap.run(opts)
-rescue GnCrossmapError => e
-  GnCrossmap.logger.error(e.message)
+  GnListResolver.run(opts)
+rescue GnListResolverError => e
+  GnListResolver.logger.error(e.message)
 end

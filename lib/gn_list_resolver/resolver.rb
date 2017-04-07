@@ -1,8 +1,8 @@
 require "graphql/client"
 require "graphql/client/http"
 
-# GnCrossmap::test
-module GnCrossmap
+# GnListResolver::test
+module GnListResolver
   HTTP = GraphQL::Client::HTTP.new("http://gnresolver.globalnames.org/api/graphql")
   SCHEMA = GraphQL::Client.load_schema(HTTP)
   CLIENT = GraphQL::Client.new(schema: SCHEMA, execute: HTTP)
@@ -23,7 +23,7 @@ module GnCrossmap
   class Resolver
     def initialize(writer, data_source_id, stats)
       @stats = stats
-      @processor = GnCrossmap::ResultProcessor.new(writer, @stats)
+      @processor = GnListResolver::ResultProcessor.new(writer, @stats)
       @ds_id = data_source_id
       @count = 0
       @current_data = {}
@@ -67,7 +67,7 @@ module GnCrossmap
       s = @count + 1
       @count += @batch
       e = [@count, @stats.stats[:total_records]].min
-      GnCrossmap.log("Resolve #{s}-#{e} out of #{@stats.stats[:total_records]} records")
+      GnListResolver.log("Resolve #{s}-#{e} out of #{@stats.stats[:total_records]} records")
       yield
     end
 
@@ -119,7 +119,7 @@ module GnCrossmap
     def process_resolver_error(err, name)
       @stats.stats[:matches][7] += 1
       @stats.stats[:resolved_records] += 1
-      GnCrossmap.logger.error("Resolver broke on '#{name}': #{err.message}")
+      GnListResolver.logger.error("Resolver broke on '#{name}': #{err.message}")
     end
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module GnCrossmap
-  # Collects statistics about crossmapping process
+module GnListResolver
+  # Collects statistics about list resolving process
   class Stats
     attr_accessor :stats
 

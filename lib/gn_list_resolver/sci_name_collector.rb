@@ -1,4 +1,4 @@
-module GnCrossmap
+module GnListResolver
   # Assemble data from CSV reader by parsing scientificName field
   class SciNameCollector
     def initialize(fields)

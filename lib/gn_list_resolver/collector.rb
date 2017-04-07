@@ -1,4 +1,4 @@
-module GnCrossmap
+module GnListResolver
   # Assemble data from CSV reader by checking column fields
   class Collector
     attr_reader :data
@@ -22,7 +22,7 @@ module GnCrossmap
       @fields = @row.map { |f| prepare_field(f) }
       @collector = collector_factory
       err = "taxonID must be present in the csv header"
-      raise GnCrossmapError, err unless taxon_id?
+      raise GnListResolverError, err unless taxon_id?
     end
 
     def taxon_id?

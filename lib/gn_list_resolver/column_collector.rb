@@ -1,4 +1,4 @@
-module GnCrossmap
+module GnListResolver
   # Assemble data from CSV reader by checking column fields
   class ColumnCollector
     RANKS = %i(kingdom subkingdom phylum subphylum superclass class
@@ -11,7 +11,7 @@ module GnCrossmap
       @fields = fields
       err = "At least some of these fields must exist in " \
         "the CSV header: '#{RANKS.join('\', \'')}'"
-      raise GnCrossmapError, err if (RANKS - @fields).size == RANKS.size
+      raise GnListResolverError, err if (RANKS - @fields).size == RANKS.size
     end
 
     def id_name_rank(row)

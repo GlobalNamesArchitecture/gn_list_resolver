@@ -1,23 +1,23 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "gn_crossmap/version"
+require "gn_list_resolver/version"
 
 Gem::Specification.new do |gem|
   gem.required_ruby_version = ">= 2.1"
-  gem.name          = "gn_crossmap"
-  gem.version       = GnCrossmap::VERSION
+  gem.name          = "gn_list_resolver"
+  gem.version       = GnListResolver::VERSION
   gem.license       = "MIT"
   gem.authors       = ["Dmitry Mozzherin"]
   gem.email         = ["dmozzherin@gmail.com"]
 
-  gem.summary       = "Crossmaps a list of scientific names to names from " \
+  gem.summary       = "Resolves a list of scientific names to names from " \
                        "a data source in GN Index"
   gem.description   = "Gem uses a checklist in a comma-separated format as " \
                       "an input, and returns back a new comma-separated " \
-                      "list crossmapping the scientific names to one of the " \
+                      "resolved list of scientific names to one of the " \
                       "data sources from http://resolver.globalnames.org"
-  gem.homepage      = "https://github.com/GlobalNamesArchitecture/gn_crossmap"
+  gem.homepage      = "https://github.com/GlobalNamesArchitecture/gn_list_resolver"
 
   gem.files         = `git ls-files -z`.
                       split("\x0").
