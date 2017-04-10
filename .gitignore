@@ -13,3 +13,4 @@ output.csv
 t
 gn_list_resolver-*.gem
 .byebug_history
+.DS_Store

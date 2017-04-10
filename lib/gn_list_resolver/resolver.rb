@@ -3,7 +3,8 @@ require "graphql/client/http"
 
 # GnListResolver::test
 module GnListResolver
-  HTTP = GraphQL::Client::HTTP.new("http://gnresolver.globalnames.org/api/graphql")
+  HTTP_URI = "http://gnresolver.globalnames.org/api/graphql".freeze
+  HTTP = GraphQL::Client::HTTP.new(HTTP_URI)
   SCHEMA = GraphQL::Client.load_schema(HTTP)
   CLIENT = GraphQL::Client.new(schema: SCHEMA, execute: HTTP)
 
@@ -67,7 +68,8 @@ module GnListResolver
       s = @count + 1
       @count += @batch
       e = [@count, @stats.stats[:total_records]].min
-      GnListResolver.log("Resolve #{s}-#{e} out of #{@stats.stats[:total_records]} records")
+      GnListResolver.log("Resolve #{s}-#{e} out of " \
+                         "#{@stats.stats[:total_records]} records")
       yield
     end
 
@@ -83,7 +85,9 @@ module GnListResolver
     def variables(names)
       {
         dataSourceIds: [@ds_id],
-        names: names.map { |name| { value: name[:name], suppliedId: name[:id] } }
+        names: names.map do |name|
+          { value: name[:name], suppliedId: name[:id] }
+        end
       }
     end
 

@@ -9,7 +9,5 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 Style/DotPosition:
   EnforcedStyle: trailing
-Metrics/LineLength:
-  Max: 100
 Metrics/AbcSize:
   Max: 16
