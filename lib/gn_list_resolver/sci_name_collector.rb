@@ -1,4 +1,4 @@
-module GnCrossmap
+module GnListResolver
   # Assemble data from CSV reader by parsing scientificName field
   class SciNameCollector
     def initialize(fields)
@@ -9,7 +9,7 @@ module GnCrossmap
     def id_name_rank(row)
       @row = row
       name = find_name
-      id = GnCrossmap.find_id(@row, name)
+      id = GnListResolver.find_id(@row, name)
       rank = @row[:taxonrank]
       rank = parse_rank if rank.nil?
       id && name ? { id: id, name: name, rank: rank } : nil

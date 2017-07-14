@@ -1,16 +1,42 @@
-module GnCrossmap
+require "graphql/client"
+require "graphql/client/http"
+
+# GnListResolver::test
+module GnListResolver
+  # resolver_url = "http://gnresolver.globalnames.org/api/graphql".freeze
+  # resolver_url = "http://localhost:8888/api/graphql".freeze
+  # resolver_url = "http://localhost:8080/api/graphql".freeze
+  resolver_url = "http://172.22.247.28:30436/api/graphql".freeze
+  HTTP = GraphQL::Client::HTTP.new(resolver_url)
+  SCHEMA = GraphQL::Client.load_schema(HTTP)
+  CLIENT = GraphQL::Client.new(schema: SCHEMA, execute: HTTP)
+  NAME_RESOLVERS_QUERY = CLIENT.parse <<-'GRAPHQL'
+      query($names: [name!]!, $dataSourceIds: [Int!]) {
+        nameResolver(names: $names, dataSourceIds: $dataSourceIds) {
+          total suppliedId suppliedInput
+          results {
+            name { name }
+            canonicalName { name }
+            synonym
+            matchType { kind score editDistance }
+            taxonId classification { pathRanks }
+            score { value parsingQuality }
+          }
+        }
+      }
+    GRAPHQL
+
   # Sends data to GN Resolver and collects results
   class Resolver
     attr_reader :stats
 
     def initialize(writer, data_source_id, resolver_url, stats)
       @stats = stats
-      @resolver_url = resolver_url
-      @processor = GnCrossmap::ResultProcessor.new(writer, @stats)
+      @processor = GnListResolver::ResultProcessor.new(writer, @stats)
       @ds_id = data_source_id
       @count = 0
       @current_data = {}
-      @batch = 200
+      @batch = 1000
     end
 
     def resolve(data)
@@ -26,7 +52,8 @@ module GnCrossmap
       cmd = nil
       data.each_slice(@batch) do |slice|
         with_log do
-          remote_resolve(collect_names(slice))
+          collect_names(slice)
+          remote_resolve(slice)
           cmd = yield(@stats.stats) if block_given?
         end
         break if cmd == "STOP"
@@ -49,29 +76,34 @@ module GnCrossmap
       s = @count + 1
       @count += @batch
       e = [@count, @stats.stats[:total_records]].min
-      GnCrossmap.log("Resolve #{s}-#{e} out of " \
-                     "#{@stats.stats[:total_records]} records at " \
-                     "#{@resolver_url}")
+      GnListResolver.log("Resolve #{s}-#{e} out of " \
+                         "#{@stats.stats[:total_records]} records at " \
+                         "#{@resolver_url}")
       yield
     end
 
     def collect_names(slice)
       @current_data = {}
-      slice.each_with_object("") do |row, str|
+      slice.each do |row|
         id = row[:id].strip
         @current_data[id] = row[:original]
         @processor.input[id] = { rank: row[:rank] }
-        str << "#{id}|#{row[:name]}\n"
       end
+    end
+
+    def variables(names)
+      {
+        dataSourceIds: [@ds_id],
+        names: names.map do |name|
+          { value: name[:name], suppliedId: name[:id] }
+        end
+      }
     end
 
     def remote_resolve(names)
       batch_start = Time.now
-      res = RestClient.post(@resolver_url, data: names, data_source_ids: @ds_id)
-      @processor.process(res, @current_data)
-    rescue RestClient::Exception
-      single_remote_resolve(names)
-    ensure
+      res = CLIENT.query(NAME_RESOLVERS_QUERY, variables: variables(names))
+      @processor.process(res.data.nameResolver, @current_data)
       update_batch_times(batch_start)
     end
 
@@ -82,23 +114,10 @@ module GnCrossmap
       s[:resolution_span] = Time.now - s[:resolution_start]
     end
 
-    def single_remote_resolve(names)
-      names.split("\n").each do |name|
-        begin
-          res = RestClient.post(@resolver_url, data: name,
-                                               data_source_ids: @ds_id)
-          @processor.process(res, @current_data)
-        rescue RestClient::Exception => e
-          process_resolver_error(e, name)
-          next
-        end
-      end
-    end
-
     def process_resolver_error(err, name)
       @stats.stats[:matches][7] += 1
       @stats.stats[:resolved_records] += 1
-      GnCrossmap.logger.error("Resolver broke on '#{name}': #{err.message}")
+      GnListResolver.logger.error("Resolver broke on '#{name}': #{err.message}")
     end
   end
 end

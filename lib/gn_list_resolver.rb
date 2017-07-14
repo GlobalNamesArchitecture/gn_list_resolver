@@ -6,31 +6,22 @@ require "logger"
 require "logger/colors"
 require "biodiversity"
 require "gn_uuid"
-require "gn_crossmap/errors"
-require "gn_crossmap/version"
-require "gn_crossmap/reader"
-require "gn_crossmap/writer"
-require "gn_crossmap/collector"
-require "gn_crossmap/column_collector"
-require "gn_crossmap/sci_name_collector"
-require "gn_crossmap/resolver"
-require "gn_crossmap/result_processor"
-require "gn_crossmap/stats"
+require "gn_list_resolver/errors"
+require "gn_list_resolver/version"
+require "gn_list_resolver/reader"
+require "gn_list_resolver/writer"
+require "gn_list_resolver/collector"
+require "gn_list_resolver/column_collector"
+require "gn_list_resolver/sci_name_collector"
+require "gn_list_resolver/resolver"
+require "gn_list_resolver/result_processor"
+require "gn_list_resolver/stats"
 
-# Namespace module for crossmapping checklists wth GN sources
-module GnCrossmap
+# Namespace module for resolving lists with GN sources
+module GnListResolver
   INPUT_MODE = "r:utf-8".freeze
   OUTPUT_MODE = "w:utf-8".freeze
-  MATCH_TYPES = {
-    0 => "No match",
-    1 => "Exact string match",
-    2 => "Canonical form exact match",
-    3 => "Canonical form fuzzy match",
-    4 => "Partial canonical form match",
-    5 => "Partial canonical form fuzzy match",
-    6 => "Genus part match",
-    7 => "Error in matching"
-  }.freeze
+  MATCH_TYPE_EMPTY = "EmptyMatch".freeze
 
   class << self
     attr_writer :logger
@@ -78,7 +69,10 @@ module GnCrossmap
     end
 
     def opts_struct(opts)
-      resolver_url = "http://resolver.globalnames.org/name_resolvers.json"
+      # resolver_url = "http://gnresolver.globalnames.org/api/graphql".freeze
+      # resolver_url = "http://localhost:8888/api/graphql".freeze
+      # resolver_url = "http://localhost:8080/api/graphql".freeze
+      resolver_url = "http://172.22.247.28:30436/api/graphql".freeze
       OpenStruct.new({ stats: Stats.new, alt_headers: [],
                        resolver_url: resolver_url }.merge(opts))
     end

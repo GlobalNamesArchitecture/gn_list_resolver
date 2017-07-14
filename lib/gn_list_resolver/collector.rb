@@ -1,4 +1,4 @@
-module GnCrossmap
+module GnListResolver
   # Assemble data from CSV reader by checking column fields
   class Collector
     attr_reader :data

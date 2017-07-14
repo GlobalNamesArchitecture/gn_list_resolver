@@ -4,10 +4,12 @@ AllCops:
     - bundle_bin/**/*
     - spec/**/*
   Include:
-    - exe/crossmap
+    - exe/list_resolver
     - "**/Gemfile"
     - "**/Rakefile"
 Layout/DotPosition:
   EnforcedStyle: trailing
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+Metrics/AbcSize:
+  Max: 20
