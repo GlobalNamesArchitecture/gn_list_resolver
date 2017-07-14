@@ -1,3 +1,4 @@
+.idea
 /.bundle/
 /.yardoc
 /Gemfile.lock
@@ -10,6 +11,7 @@
 output.csv
 .vim.custom
 t
-gn_crossmap-*.gem
+gn_list_resolver-*.gem
 .byebug_history
 .nvimlog
+.DS_Store

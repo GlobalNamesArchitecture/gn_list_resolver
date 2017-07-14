@@ -1,5 +1,5 @@
-describe GnCrossmap do
-  subject { GnCrossmap }
+describe GnListResolver do
+  subject { GnListResolver }
 
   describe ".version" do
     it "has a version number" do
@@ -15,7 +15,7 @@ describe GnCrossmap do
         data_source_id: 1,
         skip_original: false }
     end
-    it "runs crossmapping" do
+    it "runs list resolving" do
       expect(subject.run(opts)).
         to eq opts[:output]
     end
@@ -83,8 +83,8 @@ describe GnCrossmap do
         subject.run(opts5) do |stats|
           states << stats[:status]
           expect(stats[:total_records]).to be 301
-          expect([0, 200, 301].include?(stats[:resolved_records])).to be true
-          matches = stats[:matches].values.inject(:+)
+          expect([0, 347].include?(stats[:resolved_records])).to be true
+          matches = stats[:matches].values.inject(0, :+)
           expect(matches).to be stats[:resolved_records]
           expect(stats.keys).
             to match_array %i(status total_records ingested_records

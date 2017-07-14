@@ -3,4 +3,4 @@ require "coveralls"
 Coveralls.wear!
 
 require "support/helpers"
-require "gn_crossmap"
+require "gn_list_resolver"

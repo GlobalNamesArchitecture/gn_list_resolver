@@ -8,7 +8,7 @@ describe "features" do
                    data_source_id: 1,
                    skip_original: true }
           FileUtils.rm(opts[:output]) if File.exist?(opts[:output])
-          GnCrossmap.run(opts)
+          GnListResolver.run(opts)
           expect(File.exist?(opts[:output])).to be true
         end
       end
@@ -17,15 +17,18 @@ describe "features" do
 
   context "combining acceptedName output" do
     it "gives accepted name for all matches" do
+      pending("need to resolve CoL error with name \
+               'Testechiniscus spitsbergensis (Scourfield, 1897)'")
+
       opts = { output: "/tmp/output.csv",
                input: FILES[:sciname],
                data_source_id: 1, skip_original: true }
-      GnCrossmap.run(opts)
+      GnListResolver.run(opts)
       CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
         next unless r["matchedEditDistance"] == "0"
         expect(r["matchedName"].size).to be > 1
         expect(r["acceptedName"].size).to be > 1
-        if r["synonymStatus"]
+        if r["synonymStatus"] == "true"
           expect(r["matchedName"]).to_not eq r["acceptedName"]
         else
           expect(r["matchedName"]).to eq r["acceptedName"]
@@ -41,7 +44,7 @@ describe "features" do
                input: FILES[:no_name],
                data_source_id: 1, skip_original: true,
                alt_headers: %w[taxonID scientificName rank] }
-      GnCrossmap.run(opts)
+      GnListResolver.run(opts)
       CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
         next unless r["matchedEditDistance"] == "0"
         expect(r["matchedName"].size).to be > 1
@@ -67,7 +70,7 @@ describe "features" do
       opts = { output: "/tmp/output.csv",
                input: FILES[:no_name],
                data_source_id: 1, skip_original: true }
-      expect { GnCrossmap.run(opts) }.to raise_error GnCrossmapError
+      expect { GnListResolver.run(opts) }.to raise_error GnListResolverError
     end
 
     it "uses complex alternative headers" do
@@ -75,7 +78,7 @@ describe "features" do
                input: FILES[:fix_headers],
                data_source_id: 1, skip_original: true,
                alt_headers: %w[nil nil taxonID rank genus species nil scientificNameAuthorship nil] }
-      GnCrossmap.run(opts)
+      GnListResolver.run(opts)
       CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
         next unless r["matchedEditDistance"] == "0"
         expect(r["matchedName"].size).to be > 1
@@ -90,9 +93,9 @@ describe "features" do
       opts = { output: "/tmp/output.csv",
                input: FILES[:sciname],
                data_source_id: 1, skip_original: true }
-      GnCrossmap.run(opts) { "STOP" }
+      GnListResolver.run(opts) { "STOP" }
       lines_num = File.readlines(opts[:output]).size
-      expect(lines_num).to be 201
+      expect(lines_num).to be 1550
       FileUtils.rm(opts[:output])
     end
   end

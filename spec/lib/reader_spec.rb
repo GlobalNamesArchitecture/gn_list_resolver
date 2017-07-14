@@ -1,14 +1,14 @@
-describe GnCrossmap::Reader do
+describe GnListResolver::Reader do
   let(:csv_io) { io(FILES[:all_fields], "r:utf-8") }
   let(:skip_original) { false }
-  let(:stats) { GnCrossmap::Stats.new }
+  let(:stats) { GnListResolver::Stats.new }
   subject do
-    GnCrossmap::Reader.new(csv_io, FILES[:all_fields], skip_original, [], stats)
+    GnListResolver::Reader.new(csv_io, FILES[:all_fields], skip_original, [], stats)
   end
 
   describe ".new" do
     it "creates instance" do
-      expect(subject).to be_kind_of GnCrossmap::Reader
+      expect(subject).to be_kind_of GnListResolver::Reader
     end
   end
 

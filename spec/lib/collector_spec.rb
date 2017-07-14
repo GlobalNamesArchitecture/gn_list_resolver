@@ -1,6 +1,6 @@
-describe GnCrossmap::Collector do
+describe GnListResolver::Collector do
   let(:skip_original) { false }
-  subject { GnCrossmap::Collector.new(skip_original) }
+  subject { GnListResolver::Collector.new(skip_original) }
 
   context "name assembled from columns" do
     let(:fields) do
@@ -12,7 +12,7 @@ describe GnCrossmap::Collector do
 
     describe ".new" do
       it "initializes" do
-        expect(subject).to be_kind_of GnCrossmap::Collector
+        expect(subject).to be_kind_of GnListResolver::Collector
       end
     end
 
@@ -65,7 +65,7 @@ describe GnCrossmap::Collector do
         it "does not generate row" do
           expect do
             subject.process_row(fields)
-          end.to raise_error GnCrossmapError
+          end.to raise_error GnListResolverError
         end
       end
     end
@@ -140,7 +140,7 @@ describe GnCrossmap::Collector do
       it "raises error" do
         expect do
           subject.process_row(fields)
-        end.to raise_error GnCrossmapError
+        end.to raise_error GnListResolverError
       end
     end
   end

@@ -1,4 +1,4 @@
-describe GnCrossmap::Writer do
+describe GnListResolver::Writer do
   let(:output) { io(FILES[:output], "w:utf-8") }
-  subject { GnCrossmap::Writer.new(output, [], FILES[:output]) }
+  subject { GnListResolver::Writer.new(output, [], FILES[:output]) }
 end
