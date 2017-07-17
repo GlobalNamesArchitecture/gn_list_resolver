@@ -26,9 +26,9 @@ module GnListResolver
       @stats.stats[:matches][GnListResolver::MATCH_TYPE_EMPTY] += 1
       @stats.stats[:resolved_records] += 1
       res = @original_data[datum.supplied_id]
-      res += [GnListResolver::MATCH_TYPE_EMPTY, datum.suppliedInput, nil,
+      res += [GnListResolver::MATCH_TYPE_EMPTY, datum.supplied_input, nil,
               nil,
-              @input[datum.suppliedId][:rank],
+              @input[datum.supplied_id][:rank],
               nil,
               nil, nil, nil]
       @writer.write(res)
@@ -42,33 +42,33 @@ module GnListResolver
     end
 
     def collect_stats(datum)
-      match_type_min = datum.results.min_by { |d| d.matchType.score }
+      match_type_min = datum.results.min_by { |d| d.match_type.score }
       match_type_value = if match_type_min.nil?
                            GnListResolver::MATCH_TYPE_EMPTY
                          else
-                           match_type_min.matchType.kind
+                           match_type_min.match_type.kind
                          end
       @stats.stats[:matches][match_type_value] += 1
       @stats.stats[:resolved_records] += 1
     end
 
     def compile_result(datum, result)
-      @original_data[datum.suppliedId] + new_data(datum, result)
+      @original_data[datum.supplied_id] + new_data(datum, result)
     end
 
     def new_data(datum, result)
-      [result.matchType.kind, datum.suppliedInput, result.name.name,
-       result.canonicalName.name, @input[datum.suppliedId][:rank],
+      [result.match_type.kind, datum.supplied_input, result.name.name,
+       result.canonical_name.name, @input[datum.supplied_id][:rank],
        matched_rank(result),
        result.synonym,
        result.name.name, # TODO: should be `current_name_string` field
-       result.matchType.editDistance,
+       result.match_type.edit_distance,
        result.score.value,
-       result.taxonId]
+       result.taxon_id]
     end
 
     def matched_rank(result)
-      result.classification.pathRanks.split("|").last
+      result.classification.path_ranks.split("|").last
     end
   end
 end

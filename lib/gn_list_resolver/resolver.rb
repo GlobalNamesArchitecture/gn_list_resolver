@@ -103,7 +103,7 @@ module GnListResolver
     def remote_resolve(names)
       batch_start = Time.now
       res = CLIENT.query(NAME_RESOLVERS_QUERY, variables: variables(names))
-      @processor.process(res.data.nameResolver, @current_data)
+      @processor.process(res.data.name_resolver, @current_data)
       update_batch_times(batch_start)
     end
 
