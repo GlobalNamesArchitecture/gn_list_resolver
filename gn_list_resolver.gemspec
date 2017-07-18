@@ -1,4 +1,4 @@
-# coding: utf-8
+# frozen_string_literal: true
 
 lib = File.expand_path("../lib", __FILE__)
 
@@ -21,7 +21,8 @@ Gem::Specification.new do |gem|
                       "an input, and returns back a new comma-separated " \
                       "resolved list of scientific names to one of the " \
                       "data sources from http://resolver.globalnames.org"
-  gem.homepage      = "https://github.com/GlobalNamesArchitecture/gn_list_resolver"
+  gem.homepage      =
+    "https://github.com/GlobalNamesArchitecture/gn_list_resolver"
 
   gem.files         = `git ls-files -z`.
                       split("\x0").
@@ -40,7 +41,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "bundler", "~> 1.7"
   gem.add_development_dependency "rake", "~> 11.0"
   gem.add_development_dependency "rspec", "~> 3.2"
-  gem.add_development_dependency "rubocop", "~> 0.31"
+  gem.add_development_dependency "rubocop", "~> 0.49"
   gem.add_development_dependency "coveralls", "~> 0.8"
   gem.add_development_dependency "byebug", "~> 9.0"
   gem.add_development_dependency "guard", "~> 2.14"

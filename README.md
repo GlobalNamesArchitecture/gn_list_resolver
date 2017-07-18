@@ -1,4 +1,4 @@
-# GnCrossmap
+# Global Names List Resolver
 
 [![Gem Version][gem-badge]][gem-link]
 [![Continuous Integration Status][ci-badge]][ci-link]
@@ -63,7 +63,7 @@ cat my_list.csv | crossmap -i my_list.csv -s
 
 ### Usage as Ruby Library (API description)
 
-#### `GnCrossmap.run`
+#### `GnListResolver.run`
 
 Compares an input list to a data source from [GN Resolver][resolver] and
 writes result into an output file.
@@ -72,7 +72,7 @@ writes result into an output file.
 
 opts = { input: input, output: output, data_source_id: 1 ,
          skip_original: true, alt_headers: [] }
-GnCrossmap.run(opts)
+GnListResolver.run(opts)
 ```
 
 ``input``
@@ -97,7 +97,7 @@ instead of the headers supplied with the file
 ``resolver_url``
 : URL to globalnames' resolver. Default is ``http://resolver.globalnames.org``
 
-#### `GnCrossmap.logger=`
+#### `GnListResolver.logger=`
 
 Allows to set logger to a custom logger (default is `STDERR`)
 
@@ -108,29 +108,29 @@ require "gn_crossmap"
 
 # If you want to change logger -- default Logging is to standard error
 
-GnCrossmap.logger = MyCustomLogger.new
+GnListResolver.logger = MyCustomLogger.new
 
 opts = { input: "path/to/input.csv", output: "path/to/output.csv,
          data_source_id: 5 , skip_original: true }
-GnCrossmap.run("path/to/input.csv", "path/to/output.csv", 5, true)
+GnListResolver.run("path/to/input.csv", "path/to/output.csv", 5, true)
 
 # if you want to use alternative headers instead of ones supplied in a file
 
 opts = { input: "path/to/input.csv", output: "path/to/output.csv,
          data_source_id: 5 , skip_original: true,
          alt_headers: %w(taxonId, scientificName, rank) }
-GnCrossmap.run(opts)
+GnListResolver.run(opts)
 ```
 
 If you want to get intermediate statistics for each resolution cycle use a
 block:
 
 ```ruby
-GnCrossmap.run(opts) do |stats|
+GnListResolver.run(opts) do |stats|
   puts stats
   puts "Matches:"
   stats[:matches].each do |key, value|
-    puts "#{GnCrossmap::MATCH_TYPES[key]}: #{value}"
+    puts "#{GnListResolver::MATCH_TYPES[key]}: #{value}"
   end
 end
 ```
@@ -138,7 +138,7 @@ end
 To trigger termination of the resolution before it is completed
 
 ```ruby
-GnCrossmap.run(opts) do
+GnListResolver.run(opts) do
   # do something and then return STOP string from the block
   "STOP"
 end
@@ -163,7 +163,7 @@ end
 
 #### Match types
 
-Match types dictionary can be accessed with `GnCrossmap::MATCH_TYPES` constant
+Match types dictionary can be accessed with `GnListResolver::MATCH_TYPES` constant
 
 | Match code | Match type                       |
 |------------|----------------------------------|

@@ -74,7 +74,7 @@ describe "features" do
                input: FILES[:all_fields_tiny],
                data_source_id: 1,
                alt_headers: %w[taxonID scientificName] }
-      GnCrossmap.run(opts)
+      GnListResolver.run(opts)
       CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
         next unless r["matchedEditDistance"] == "0"
         expect(r["inputName"]).to eq "Animalia"

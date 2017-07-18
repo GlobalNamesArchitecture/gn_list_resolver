@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
@@ -15,6 +17,6 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard :rspec, cmd: 'bundle exec rspec' do
+guard :rspec, cmd: "bundle exec rspec" do
   watch(%r{^lib/gn_list_resolver/(.+)\.rb$}) { |m| "spec/lib/#{m[1]}_spec.rb" }
 end

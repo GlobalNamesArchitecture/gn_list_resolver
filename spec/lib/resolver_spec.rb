@@ -1,5 +1,5 @@
 describe GnListResolver::Resolver do
-  let(:url) {  "http://172.22.247.28:30436/api/graphql" }
+  let(:url) {  "http://172.22.247.28:30241/api/graphql" }
   let(:original_fields) do
     %w(TaxonId kingdom subkingdom phylum subphylum superclass class subclass
        cohort superorder order suborder infraorder superfamily family

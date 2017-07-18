@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GnListResolver
   # Processes data received from the GN Resolver
   class ResultProcessor
