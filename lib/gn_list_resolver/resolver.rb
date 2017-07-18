@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "graphql/client"
 require "graphql/client/http"
 
@@ -6,7 +8,7 @@ module GnListResolver
   # resolver_url = "http://gnresolver.globalnames.org/api/graphql".freeze
   # resolver_url = "http://localhost:8888/api/graphql".freeze
   # resolver_url = "http://localhost:8080/api/graphql".freeze
-  resolver_url = "http://172.22.247.28:30436/api/graphql".freeze
+  resolver_url = "http://172.22.247.28:30241/api/graphql"
   HTTP = GraphQL::Client::HTTP.new(resolver_url)
   SCHEMA = GraphQL::Client.load_schema(HTTP)
   CLIENT = GraphQL::Client.new(schema: SCHEMA, execute: HTTP)
@@ -28,7 +30,7 @@ module GnListResolver
 
   # Sends data to GN Resolver and collects results
   class Resolver
-    def initialize(writer, data_source_id, resolver_url, stats)
+    def initialize(writer, data_source_id, _resolver_url, stats)
       @stats = stats
       @processor = GnListResolver::ResultProcessor.new(writer, @stats)
       @ds_id = data_source_id

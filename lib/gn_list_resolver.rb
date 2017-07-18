@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "csv"
 require "ostruct"
 require "rest_client"
@@ -19,14 +21,12 @@ require "gn_list_resolver/stats"
 
 # Namespace module for resolving lists with GN sources
 module GnListResolver
-  INPUT_MODE = "r:utf-8".freeze
-  OUTPUT_MODE = "w:utf-8".freeze
-  MATCH_TYPE_EMPTY = "EmptyMatch".freeze
+  INPUT_MODE = "r:utf-8"
+  OUTPUT_MODE = "w:utf-8"
+  MATCH_TYPE_EMPTY = "EmptyMatch"
 
   class << self
     attr_writer :logger
-
-    # rubocop:disable Metrics/AbcSize
 
     def run(opts)
       opts = opts_struct(opts)
@@ -38,8 +38,6 @@ module GnListResolver
       block_given? ? resolver.resolve(data, &Proc.new) : resolver.resolve(data)
       opts.output
     end
-
-    # rubocop:enable all
 
     def logger
       @logger ||= Logger.new(STDERR)
@@ -72,7 +70,7 @@ module GnListResolver
       # resolver_url = "http://gnresolver.globalnames.org/api/graphql".freeze
       # resolver_url = "http://localhost:8888/api/graphql".freeze
       # resolver_url = "http://localhost:8080/api/graphql".freeze
-      resolver_url = "http://172.22.247.28:30436/api/graphql".freeze
+      resolver_url = "http://172.22.247.28:30241/api/graphql"
       OpenStruct.new({ stats: Stats.new, alt_headers: [],
                        resolver_url: resolver_url }.merge(opts))
     end

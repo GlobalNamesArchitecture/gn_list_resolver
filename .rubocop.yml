@@ -3,10 +3,12 @@ AllCops:
     - db/**/*
     - bundle_bin/**/*
     - spec/**/*
+    - bin/**/*
   Include:
     - exe/list_resolver
     - "**/Gemfile"
     - "**/Rakefile"
+    - "**/Guardfile"
 Layout/DotPosition:
   EnforcedStyle: trailing
 Style/StringLiterals:
