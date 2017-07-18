@@ -39,7 +39,7 @@ gem install gn_list_resolver
 
 ### Usage as a Web Application
 
-see [gn\_crossmap\_web] project
+see [gnlist-resolver-gui] project
 
 ### Usage from command line
 
@@ -293,7 +293,7 @@ commits and tags, and push the `.gem` file to
 
 Authors -- [Dmitry Mozzherin][dimus], [Alexander Myltsev][alexander-myltsev]
 
-Copyright (c) 2015-2017 [Dmitry Mozzherin][@dimus].
+Copyright (c) 2015-2017 [Dmitry Mozzherin][dimus].
 See [LICENSE][license] for details.
 
 [gem-badge]: https://badge.fury.io/rb/gn_list_resolver.svg
