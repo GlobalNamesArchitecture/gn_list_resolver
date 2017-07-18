@@ -101,7 +101,7 @@ module GnListResolver
 
     def taxon_id_header(hdrs)
       hdrs.each do |h|
-        return [h] if h.match?(/taxonid\s*$/i)
+        return [h] if h && h.match?(/taxonid\s*$/i)
       end
       []
     end

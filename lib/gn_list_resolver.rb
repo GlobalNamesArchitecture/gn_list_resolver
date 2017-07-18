@@ -70,7 +70,7 @@ module GnListResolver
       # resolver_url = "http://gnresolver.globalnames.org/api/graphql".freeze
       # resolver_url = "http://localhost:8888/api/graphql".freeze
       # resolver_url = "http://localhost:8080/api/graphql".freeze
-      resolver_url = "http://172.22.247.28:30241/api/graphql"
+      resolver_url = "http://index-api.globalnames.org/api/graphql"
       OpenStruct.new({ stats: Stats.new, alt_headers: [],
                        resolver_url: resolver_url }.merge(opts))
     end

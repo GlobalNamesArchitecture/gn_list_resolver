@@ -8,7 +8,7 @@ module GnListResolver
   # resolver_url = "http://gnresolver.globalnames.org/api/graphql".freeze
   # resolver_url = "http://localhost:8888/api/graphql".freeze
   # resolver_url = "http://localhost:8080/api/graphql".freeze
-  resolver_url = "http://172.22.247.28:30241/api/graphql"
+  resolver_url = "http://index-api.globalnames.org/api/graphql"
   HTTP = GraphQL::Client::HTTP.new(resolver_url)
   SCHEMA = GraphQL::Client.load_schema(HTTP)
   CLIENT = GraphQL::Client.new(schema: SCHEMA, execute: HTTP)
