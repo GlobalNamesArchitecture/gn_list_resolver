@@ -95,7 +95,7 @@ describe "features" do
                data_source_id: 1, skip_original: true }
       GnListResolver.run(opts) { "STOP" }
       lines_num = File.readlines(opts[:output]).size
-      expect(lines_num).to be 1550
+      expect(lines_num).to be 1521
       FileUtils.rm(opts[:output])
     end
   end

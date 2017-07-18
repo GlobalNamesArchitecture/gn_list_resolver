@@ -83,7 +83,7 @@ describe GnListResolver do
         subject.run(opts5) do |stats|
           states << stats[:status]
           expect(stats[:total_records]).to be 301
-          expect([0, 347].include?(stats[:resolved_records])).to be true
+          expect([0, 331].include?(stats[:resolved_records])).to be true
           matches = stats[:matches].values.inject(0, :+)
           expect(matches).to be stats[:resolved_records]
           expect(stats.keys).
