@@ -7,7 +7,7 @@
 [![Dependency Status][dep-badge]][dep-link]
 
 This gem crossmaps a checklist of scientific names to names from a data source
-in [GN Resolver][resolver].
+in [GN Index Resolver][gnindex].
 
 Checklist has to be in a CSV format.
 
@@ -20,7 +20,7 @@ This gem is compatible with Ruby versions higher or equal to 2.1.0
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'gn_crossmap'
+gem 'gn_list_resolver'
 ```
 
 And then execute:
@@ -32,7 +32,7 @@ bundle
 Or install it yourself as:
 
 ```bash
-gem install gn_crossmap
+gem install gn_list_resolver
 ```
 
 ## Usage
@@ -104,7 +104,7 @@ Allows to set logger to a custom logger (default is `STDERR`)
 #### Usage Example
 
 ```ruby
-require "gn_crossmap"
+require "gn_list_resolver"
 
 # If you want to change logger -- default Logging is to standard error
 
@@ -280,7 +280,7 @@ commits and tags, and push the `.gem` file to
 
 ## Contributing
 
-1. Fork it ( ``https://github.com/[my-github-username]/gn_crossmap/fork`` )
+1. Fork it ( ``https://github.com/GlobalNamesArchitecture/gn_list_resolver/fork`` )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -288,27 +288,27 @@ commits and tags, and push the `.gem` file to
 
 ## Copyright
 
-Author -- [Dmitry Mozzherin][dimus]
+Authors -- [Dmitry Mozzherin][dimus], [Alexander Myltsev][alexander-myltsev]
 
-Copyright (c) 2015-2016 [Marine Biological Laboratory][mbl].
+Copyright (c) 2015-2017 [Dmitry Mozzherin][@dimus].
 See [LICENSE][license] for details.
 
-[gem-badge]: https://badge.fury.io/rb/gn_crossmap.svg
-[gem-link]: http://badge.fury.io/rb/gn_crossmap
-[ci-badge]: https://secure.travis-ci.org/GlobalNamesArchitecture/gn_crossmap.svg
-[ci-link]: http://travis-ci.org/GlobalNamesArchitecture/gn_crossmap
-[cov-badge]: https://coveralls.io/repos/GlobalNamesArchitecture/gn_crossmap/badge.svg?branch=master
-[cov-link]: https://coveralls.io/r/GlobalNamesArchitecture/gn_crossmap?branch=master
-[code-badge]: https://codeclimate.com/github/GlobalNamesArchitecture/gn_crossmap/badges/gpa.svg
-[code-link]: https://codeclimate.com/github/GlobalNamesArchitecture/gn_crossmap
-[dep-badge]: https://gemnasium.com/GlobalNamesArchitecture/gn_crossmap.svg
-[dep-link]: https://gemnasium.com/GlobalNamesArchitecture/gn_crossmap
-[resolver]: http://resolver.globalnames.org/data_sources
+[gem-badge]: https://badge.fury.io/rb/gn_list_resolver.svg
+[gem-link]: http://badge.fury.io/rb/gn_list_resolver
+[ci-badge]: https://secure.travis-ci.org/GlobalNamesArchitecture/gn_list_resolver.svg
+[ci-link]: http://travis-ci.org/GlobalNamesArchitecture/gn_list_resolver
+[cov-badge]: https://coveralls.io/repos/GlobalNamesArchitecture/gn_list_resolver/badge.svg?branch=master
+[cov-link]: https://coveralls.io/r/GlobalNamesArchitecture/gn_list_resolver?branch=master
+[code-badge]: https://codeclimate.com/github/GlobalNamesArchitecture/gn_list_resolver/badges/gpa.svg
+[code-link]: https://codeclimate.com/github/GlobalNamesArchitecture/gn_list_resolver
+[dep-badge]: https://gemnasium.com/GlobalNamesArchitecture/gn_list_resolver.svg
+[dep-link]: https://gemnasium.com/GlobalNamesArchitecture/gn_list_resolver
+[gnindex]: http://index-api.globalnames.org/api
 [rubygems]: https://rubygems.org
 [dimus]: https://github.com/dimus
-[mbl]: http://mbl.edu
-[license]: https://github.com/GlobalNamesArchitecture/gn_crossmap/blob/master/LICENSE
+[alexander-myltsev]: https://github.com/alexander-myltsev
+[license]: https://github.com/GlobalNamesArchitecture/gn_list_resolver/blob/master/LICENSE
 [terms]: http://rs.tdwg.org/dwc/terms
-[files]:  https://github.com/GlobalNamesArchitecture/gn_crossmap/tree/master/spec/files
-[output]: https://github.com/GlobalNamesArchitecture/gn_crossmap/tree/master/spec/files/output-example.csv
-[gn_crossmap_web]: https://github.com/GlobalNamesArchitecture/gn_crossmap_web
+[files]:  https://github.com/GlobalNamesArchitecture/gn_list_resolver/tree/master/spec/files
+[output]: https://github.com/GlobalNamesArchitecture/gn_list_resolver/tree/master/spec/files/output-example.csv
+[gnlist_resolver_gui]: https://github.com/GlobalNamesArchitecture/gnlist_resolver_gui
