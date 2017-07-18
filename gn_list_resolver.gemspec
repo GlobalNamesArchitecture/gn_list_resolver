@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.name          = "gn_list_resolver"
   gem.version       = GnListResolver::VERSION
   gem.license       = "MIT"
-  gem.authors       = ["Dmitry Mozzherin"]
+  gem.authors       = ["Dmitry Mozzherin", "Alexander Myltsev"]
   gem.email         = ["dmozzherin@gmail.com"]
 
   gem.summary       = "Resolves a list of scientific names to names from " \
