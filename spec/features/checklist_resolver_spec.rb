@@ -10,7 +10,7 @@ describe "features" do
           FileUtils.rm(opts[:output]) if File.exist?(opts[:output])
           time = Time.now
           stats = GnListResolver.run(opts)
-          GnListResolver.logger.warn(stats)
+          GnListResolver.logger.warn(stats.stats)
           GnListResolver.logger.warn(format("Elapsed time: %ss",
                                             Time.now - time))
           expect(File.exist?(opts[:output])).to be true
@@ -29,7 +29,7 @@ describe "features" do
                data_source_id: 1, skip_original: true }
       time = Time.now
       stats = GnListResolver.run(opts)
-      GnListResolver.logger.warn(stats)
+      GnListResolver.logger.warn(stats.stats)
       GnListResolver.logger.warn(format("Elapsed time: %ss", Time.now - time))
       CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
         next unless r["matchedEditDistance"] == "0"
@@ -53,7 +53,7 @@ describe "features" do
                alt_headers: %w[taxonID scientificName rank] }
       time = Time.now
       stats =GnListResolver.run(opts)
-      GnListResolver.logger.warn(stats)
+      GnListResolver.logger.warn(stats.stats)
       GnListResolver.logger.warn(format("Elapsed time: %ss", Time.now - time))
       CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
         next unless r["matchedEditDistance"] == "0"
@@ -70,7 +70,7 @@ describe "features" do
                alt_headers: %w[taxonID scientificName] }
       time = Time.now
       stats = GnListResolver.run(opts)
-      GnListResolver.logger.warn(stats)
+      GnListResolver.logger.warn(stats.stats)
       GnListResolver.logger.warn(format("Elapsed time: %ss", Time.now - time))
       CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
         next unless r["matchedEditDistance"] == "0"
@@ -94,7 +94,7 @@ describe "features" do
                                scientificNameAuthorship nil] }
       time = Time.now
       stats = GnListResolver.run(opts)
-      GnListResolver.logger.warn(stats)
+      GnListResolver.logger.warn(stats.stats)
       GnListResolver.logger.warn(format("Elapsed time: %ss", Time.now - time))
       CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
         next unless r["matchedEditDistance"] == "0"
@@ -112,7 +112,7 @@ describe "features" do
                data_source_id: 1, skip_original: true }
       time = Time.now
       stats = GnListResolver.run(opts) { "STOP" }
-      GnListResolver.logger.warn(stats)
+      GnListResolver.logger.warn(stats.stats)
       GnListResolver.logger.warn(format("Elapsed time: %s", Time.now - time))
       lines_num = File.readlines(opts[:output]).size
       expect(lines_num).to be 1521

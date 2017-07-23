@@ -1,5 +1,9 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.0.1.1
+
+* @dimus - refactoring, GnListResolver.run returns stats
+
 ## 3.0.1
 
 * @dimus - fixes #31 bug: prevent csv row to get  squashed
