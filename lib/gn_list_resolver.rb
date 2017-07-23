@@ -8,6 +8,10 @@ require "logger"
 require "logger/colors"
 require "biodiversity"
 require "gn_uuid"
+require "graphql/client"
+require "graphql/client/http"
+require "gn_list_resolver/constants"
+require "gn_list_resolver/graphql"
 require "gn_list_resolver/errors"
 require "gn_list_resolver/version"
 require "gn_list_resolver/reader"
@@ -21,10 +25,6 @@ require "gn_list_resolver/stats"
 
 # Namespace module for resolving lists with GN sources
 module GnListResolver
-  INPUT_MODE = "r:utf-8"
-  OUTPUT_MODE = "w:utf-8"
-  MATCH_TYPE_EMPTY = "EmptyMatch"
-
   class << self
     attr_writer :logger
 
@@ -54,7 +54,7 @@ module GnListResolver
     private
 
     def create_resolver(writer, opts)
-      Resolver.new(writer, opts.data_source_id, opts.resolver_url, opts.stats)
+      Resolver.new(writer, opts.data_source_id, opts.stats)
     end
 
     def create_writer(reader, output_io, opts)
@@ -67,12 +67,7 @@ module GnListResolver
     end
 
     def opts_struct(opts)
-      # resolver_url = "http://gnresolver.globalnames.org/api/graphql".freeze
-      # resolver_url = "http://localhost:8888/api/graphql".freeze
-      # resolver_url = "http://localhost:8080/api/graphql".freeze
-      resolver_url = "http://index-api.globalnames.org/api/graphql"
-      OpenStruct.new({ stats: Stats.new, alt_headers: [],
-                       resolver_url: resolver_url }.merge(opts))
+      OpenStruct.new({ stats: Stats.new, alt_headers: [] }.merge(opts))
     end
 
     def io(input, output)

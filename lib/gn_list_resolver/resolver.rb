@@ -1,36 +1,13 @@
 # frozen_string_literal: true
 
-require "graphql/client"
-require "graphql/client/http"
-
 # GnListResolver::test
 module GnListResolver
-  # resolver_url = "http://gnresolver.globalnames.org/api/graphql".freeze
-  # resolver_url = "http://localhost:8888/api/graphql".freeze
-  # resolver_url = "http://localhost:8080/api/graphql".freeze
-  resolver_url = "http://index-api.globalnames.org/api/graphql"
-  HTTP = GraphQL::Client::HTTP.new(resolver_url)
-  SCHEMA = GraphQL::Client.load_schema(HTTP)
-  CLIENT = GraphQL::Client.new(schema: SCHEMA, execute: HTTP)
-  NAME_RESOLVERS_QUERY = CLIENT.parse <<-'GRAPHQL'
-      query($names: [name!]!, $dataSourceIds: [Int!]) {
-        nameResolver(names: $names, dataSourceIds: $dataSourceIds) {
-          total suppliedId suppliedInput
-          results {
-            name { name }
-            canonicalName { name }
-            synonym
-            matchType { kind score editDistance }
-            taxonId classification { pathRanks }
-            score { value parsingQuality }
-          }
-        }
-      }
-    GRAPHQL
-
   # Sends data to GN Resolver and collects results
   class Resolver
-    def initialize(writer, data_source_id, _resolver_url, stats)
+    GRAPHQL = GnGraphQL.new
+    QUERY = GRAPHQL.client.parse(GRAPHQL.query)
+
+    def initialize(writer, data_source_id, stats)
       @stats = stats
       @processor = GnListResolver::ResultProcessor.new(writer, @stats)
       @ds_id = data_source_id
@@ -78,7 +55,7 @@ module GnListResolver
       e = [@count, @stats.stats[:total_records]].min
       GnListResolver.log("Resolve #{s}-#{e} out of " \
                          "#{@stats.stats[:total_records]} records at " \
-                         "#{@resolver_url}")
+                         "#{RESOLVER_URL}")
       yield
     end
 
@@ -102,7 +79,8 @@ module GnListResolver
 
     def remote_resolve(names)
       batch_start = Time.now
-      res = CLIENT.query(NAME_RESOLVERS_QUERY, variables: variables(names))
+      res = GRAPHQL.client.query(QUERY,
+                                 variables: variables(names))
       @processor.process(res.data.name_resolver, @current_data)
       update_batch_times(batch_start)
     end

@@ -63,6 +63,12 @@ cat my_list.csv | crossmap -i my_list.csv -s
 
 ### Usage as Ruby Library (API description)
 
+#### Changing default url for gnindex API
+
+Default URL for API is `http://index-api.globalnames.org/api/graphql`
+
+if you want to change it, set an environment variable `GN_RESOLVER_URL`
+
 #### `GnListResolver.run`
 
 Compares an input list to a data source from [GN Resolver][resolver] and
@@ -93,9 +99,6 @@ from original data. Otherwise all original data is preserved. If there is no
 ``alt_headers``
 : (array) empty array by default. If `alt_headers` are not empty they are used
 instead of the headers supplied with the file
-
-``resolver_url``
-: URL to globalnames' resolver. Default is ``http://resolver.globalnames.org``
 
 #### `GnListResolver.logger=`
 
