@@ -6,6 +6,7 @@ module GnListResolver
   class Resolver
     GRAPHQL = GnGraphQL.new
     QUERY = GRAPHQL.client.parse(GRAPHQL.query)
+    attr_reader :stats
 
     def initialize(writer, data_source_id, stats)
       @stats = stats
@@ -20,7 +21,12 @@ module GnListResolver
       update_stats(data.size)
       block_given? ? process(data, &Proc.new) : process(data)
       wrap_up
-      yield(@stats.stats) if block_given?
+
+      if block_given?
+        yield(@stats.stats)
+      else
+        @stats.stats
+      end
     end
 
     private
@@ -79,8 +85,7 @@ module GnListResolver
 
     def remote_resolve(names)
       batch_start = Time.now
-      res = GRAPHQL.client.query(QUERY,
-                                 variables: variables(names))
+      res = GRAPHQL.client.query(QUERY, variables: variables(names))
       @processor.process(res.data.name_resolver, @current_data)
       update_batch_times(batch_start)
     end
