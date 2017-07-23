@@ -16,15 +16,13 @@ describe GnListResolver do
         skip_original: false }
     end
     it "runs list resolving" do
-      expect(subject.run(opts)).
-        to be_kind_of GnCrossmap::Stats
+      expect(subject.run(opts)).to be_kind_of GnListResolver::Stats
     end
 
     context "spaces in fields" do
       let(:opts2) { opts.merge(input: FILES[:spaces_in_fields]) }
       it "suppose to work even when fields have additional spaces" do
-        expect(subject.run(opts2)).
-          to be_kind_of GnCrossmap::Stats
+        expect(subject.run(opts2)).to be_kind_of GnListResolver::Stats
         expect(File.readlines(opts[:output]).size).to be > 100
       end
     end

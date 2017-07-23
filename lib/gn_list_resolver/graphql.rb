@@ -6,9 +6,9 @@ module GnListResolver
     attr_reader :client, :query
 
     def initialize
-      @http = GraphQL::Client::HTTP.new(RESOLVER_URL)
-      @schema = GraphQL::Client.load_schema(@http)
-      @client = GraphQL::Client.new(schema: @schema, execute: @http)
+      http = GraphQL::Client::HTTP.new(RESOLVER_URL)
+      schema = GraphQL::Client.load_schema(http)
+      @client = GraphQL::Client.new(schema: schema, execute: http)
       @query = <<~GRAPHQL_QUERY
         query($names: [name!]!, $dataSourceIds: [Int!]) {
           nameResolver(names: $names, dataSourceIds: $dataSourceIds) {
