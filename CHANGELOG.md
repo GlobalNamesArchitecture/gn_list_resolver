@@ -11,6 +11,11 @@
 
 * @dimus - Fixes #32 normalize capitalization of ranks according to Codes
 
+## 3.0.1.3
+
+* @dimus - make status matchers compatible with gnlist-resolver-gui, add debug
+           option for showing stats after run is done
+
 ## 3.0.1.2
 
 * @dimus - normalize matches to correspond go `gn_crossmap` ones
