@@ -28,7 +28,7 @@ module GnListResolver
       @stats.stats[:matches][MATCH_TYPE_EMPTY] += 1
       @stats.stats[:resolved_records] += 1
       res = @original_data[datum.supplied_id]
-      res += [MATCH_TYPE_EMPTY, datum.supplied_input, nil,
+      res += [MATCH_TYPES[MATCH_TYPE_EMPTY], datum.supplied_input, nil,
               nil,
               @input[datum.supplied_id][:rank],
               nil,
@@ -48,26 +48,27 @@ module GnListResolver
       match_type_value = if match_type_min.nil?
                            MATCH_TYPE_EMPTY
                          else
-                           match_type_min.match_type.kind
+                           match_type_min.match_type.kind.to_sym
                          end
       @stats.stats[:matches][match_type_value] += 1
       @stats.stats[:resolved_records] += 1
     end
 
     def compile_result(datum, result)
-      @original_data[datum.supplied_id] + new_data(datum, result)
+      @original_data[datum.supplied_id] + prepare_data(datum, result)
     end
 
     # rubocop:disable Metrics/AbcSize
 
-    def new_data(datum, result)
-      [result.match_type.kind, datum.supplied_input, result.name.name,
+    def prepare_data(datum, result)
+      [MATCH_TYPES[result.match_type.kind.to_sym],
+       datum.supplied_input, result.name.name,
        result.canonical_name.name, @input[datum.supplied_id][:rank],
        matched_rank(result),
        result.synonym,
        result.name.name, # TODO: should be `current_name_string` field
        result.match_type.edit_distance,
-       result.score.value,
+       result.score.value.round(3),
        result.taxon_id]
     end
 
