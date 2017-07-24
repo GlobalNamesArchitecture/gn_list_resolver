@@ -28,6 +28,8 @@ module GnListResolver
   class << self
     attr_writer :logger
 
+    # rubocop:disable Metrics/AbcSize
+
     def run(opts)
       opts = opts_struct(opts)
       input_io, output_io = io(opts.input, opts.output)
@@ -36,8 +38,11 @@ module GnListResolver
       writer = create_writer(reader, output_io, opts)
       resolver = create_resolver(writer, opts)
       block_given? ? resolver.resolve(data, &Proc.new) : resolver.resolve(data)
+      puts resolver.stats.stats if opts[:debug]
       resolver.stats
     end
+
+    # rubocop:enable all
 
     def logger
       @logger ||= Logger.new(STDERR)

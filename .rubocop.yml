@@ -13,5 +13,3 @@ Layout/DotPosition:
   EnforcedStyle: trailing
 Style/StringLiterals:
   EnforcedStyle: double_quotes
-Metrics/AbcSize:
-  Max: 20
