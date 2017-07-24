@@ -25,10 +25,10 @@ module GnListResolver
     end
 
     def write_empty_result(datum)
-      @stats.stats[:matches][GnListResolver::MATCH_TYPE_EMPTY] += 1
+      @stats.stats[:matches][MATCH_TYPE_EMPTY] += 1
       @stats.stats[:resolved_records] += 1
       res = @original_data[datum.supplied_id]
-      res += [GnListResolver::MATCH_TYPE_EMPTY, datum.supplied_input, nil,
+      res += [MATCH_TYPE_EMPTY, datum.supplied_input, nil,
               nil,
               @input[datum.supplied_id][:rank],
               nil,
@@ -46,17 +46,19 @@ module GnListResolver
     def collect_stats(datum)
       match_type_min = datum.results.min_by { |d| d.match_type.score }
       match_type_value = if match_type_min.nil?
-                           GnListResolver::MATCH_TYPE_EMPTY
+                           MATCH_TYPE_EMPTY
                          else
                            match_type_min.match_type.kind
                          end
-      @stats.stats[:matches][MATCH_TYPES[match_type_value.to_sym]] += 1
+      @stats.stats[:matches][match_type_value] += 1
       @stats.stats[:resolved_records] += 1
     end
 
     def compile_result(datum, result)
       @original_data[datum.supplied_id] + new_data(datum, result)
     end
+
+    # rubocop:disable Metrics/AbcSize
 
     def new_data(datum, result)
       [result.match_type.kind, datum.supplied_input, result.name.name,
@@ -68,6 +70,8 @@ module GnListResolver
        result.score.value,
        result.taxon_id]
     end
+
+    # rubocop:enable all
 
     def matched_rank(result)
       result.classification.path_ranks.split("|").last

@@ -10,8 +10,14 @@ module GnListResolver
                  resolved_records: 0, ingestion_span: nil,
                  resolution_span: nil, ingestion_start: nil,
                  resolution_start: nil, resolution_stop: nil,
-                 last_batches_time: [], matches: Hash.new(0),
+                 last_batches_time: [], matches: init_matches,
                  errors: [] }
+    end
+
+    private
+
+    def init_matches
+      MATCH_TYPES.each_with_object({}) { |t, h| h[t] = 0 }
     end
   end
 end
