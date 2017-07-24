@@ -17,7 +17,7 @@ module GnListResolver
     private
 
     def init_matches
-      MATCH_TYPES.each_with_object({}) { |t, h| h[t] = 0 }
+      MATCH_TYPES.keys.each_with_object({}) { |t, h| h[t] = 0 }
     end
   end
 end
