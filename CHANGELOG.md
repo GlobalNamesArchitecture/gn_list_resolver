@@ -11,6 +11,10 @@
 
 * @dimus - Fixes #32 normalize capitalization of ranks according to Codes
 
+## 3.0.1.2
+
+* @dimus - normalize matches to correspond go `gn_crossmap` ones
+
 ## 3.0.1.1
 
 * @dimus - refactoring, GnListResolver.run returns stats
