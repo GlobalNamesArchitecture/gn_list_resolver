@@ -1,10 +1,13 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.0.1.4
+
+* @dimus - output of list_resolver resembles gn_crossmap output closer
+
 ## 3.0.1.3
 
 * @dimus - make status matchers compatible with gnlist-resolver-gui, add debug
            option for showing stats after run is done
-
 
 ## 3.0.1.2
 
