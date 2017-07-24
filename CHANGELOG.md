@@ -11,6 +11,10 @@
 
 * @dimus - Fixes #32 normalize capitalization of ranks according to Codes
 
+## 3.0.1.4
+
+* @dimus - output of list_resolver resembles gn_crossmap output closer
+
 ## 3.0.1.3
 
 * @dimus - make status matchers compatible with gnlist-resolver-gui, add debug
