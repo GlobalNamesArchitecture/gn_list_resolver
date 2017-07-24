@@ -50,7 +50,7 @@ module GnListResolver
                          else
                            match_type_min.match_type.kind
                          end
-      @stats.stats[:matches][match_type_value] += 1
+      @stats.stats[:matches][MATCH_TYPES[match_type_value.to_sym]] += 1
       @stats.stats[:resolved_records] += 1
     end
 
