@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe "features" do
   context "resolving variety of csv files" do
     %i[all_fields sciname sciname_auth sciname_rank csv_relaxed].each do |input|
