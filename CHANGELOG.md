@@ -11,9 +11,13 @@
 
 * @dimus - Fixes #32 normalize capitalization of ranks according to Codes
 
+## 3.0.1.5
+
+* @dimus - handles errors on server side
+
 ## 3.0.1.4
 
-* @dimus - output of list_resolver resembles gn_crossmap output closer
+* @dimus - output of `list_resolver` resembles `gn_crossmap` output closer
 
 ## 3.0.1.3
 
