@@ -68,7 +68,7 @@ module GnListResolver
        result.synonym,
        result.name.name, # TODO: should be `current_name_string` field
        result.match_type.edit_distance,
-       result.score.value.round(3),
+       result.score.value ? result.score.value.round(3) : nil,
        result.taxon_id]
     end
 

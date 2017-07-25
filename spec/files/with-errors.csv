@@ -1,0 +1,301 @@
+taxonID,scientificName,parser_run
+c1e55e65-fba8-5251-a8bf-cd6837f1770a,226 I Lg sofi Har Bulg,
+a0079ccd-1354-5acb-8f62-a6072c8ff7fc,228 I Lg cnfl,
+bac24b6d-e122-50f4-b5d7-a5b32f759e25,228 I Lg cnfl Bey Turk,
+04070bcc-f705-54d3-9d17-f3dece9dbc89,301 I Lg artv Bal Turk,
+205c30ce-a4ad-5395-ba27-9c34386839f9,301 I Lg cf artv,
+8eb37264-42de-5552-be47-d3614ab3cd05,301 I Lg cf artv Bal Turk,
+8cabb3ca-e9ea-5c19-8427-ee8bed694447,304 I Lg artv,
+72352dcc-d745-5ff5-93c5-5c45cd97cffb,304 I Lg artv Art Turk,
+21ebb457-046d-51f6-8854-32f34f6e91ea,305 I Lg lin,
+4957b58c-92f7-52c4-bff5-35cc46b96beb,305 I Lg lin Cim Turk,
+689e26cd-9c6b-5bb6-b1a7-f50f3b82821a,305 I Lg lini Cim Turk,
+b2085496-46f2-5569-855a-26f4427d160b,309 Lg sofi MtRi Bulg,
+845a5f86-ea7b-5201-8c49-91fdc3bf410a,310 Lv MtRi Bulg,
+23f5efce-10a3-5fa0-b535-f078e2e4356b,312 I Lg lin,
+9c4dcb53-18d4-5e53-9051-59390ad38ab0,312 I Lg lin Cim Turk,
+d1a95646-0b99-5fbc-af11-ec2571d10c8a,312 I Lg lini Cim Turk,
+5ed1cccc-fd4f-5a3f-964a-098806b2ba00,314 I Lg cf lin,
+e021fb84-5aaf-5789-a4a4-348676133ad8,314 I Lg cf lin Kar Turk,
+c9e2b960-c61b-58c5-9c27-120e25694182,705 Lv MkG Serb,
+c922426b-c249-552f-bfc6-9df9b1744a29,707 Lv MkG Serb,
+694b537b-87e6-522d-bb2e-5aef8a89fe39,716 Lg sofi MtRi Bulg,
+6d3a6e61-a3c3-5365-9dc0-9e4d3bf7661d,722 Lv MtRi Bulg,
+9f937750-e077-581d-8f29-ad339ab9cce7,723 Lv MtRi Bulg,
+0b0151ad-8fe4-5a66-afe0-2182692133b3,771 Lv MkG Serb,
+a60da3a3-1010-5485-964d-5b73c9d52c82,A adelphus,
+f578930f-2e16-5e06-a074-6610bf413d34,A affinis,
+f7c9e397-5a36-5c1c-af41-d13050a179a1,A cfreichei,
+ddf6f373-e173-507a-bf83-42adfd74728c,A francei,
+bec51f81-bb3a-57f9-8fb7-5e0e370022bc,A nikeae,
+83af75ca-5553-58f5-a3b4-d9e0678b6bda,A poecilonotus,
+ef7d10c9-bdd9-5a6f-beb9-4ef9e3413dc5,A reichei,
+7832e52f-5ce4-548b-b154-398abd2a9e0a,A schubotzi,
+113eeefd-f9bc-5c06-adba-7ccf812aee6d,A spnov2,
+dfec04e0-da27-5d46-8223-70a98f6ac249,A stenodactylus,
+5c45f1ee-1fb5-5c76-a53f-54fca2581cf7,A sylvaticus,
+98806b56-28a9-5fb9-bd5f-697d251abe47,A tanneri,
+bb02fdfe-efdb-587a-923b-8596710ff556,A variabilis,
+161ebc8f-41d0-5133-9e36-3f57f6313084,A wahlbergii,
+b05b5b4d-5e60-51fd-93d0-dcf16830492f,A xenodactylus,
+b102e759-cd97-5e24-b19f-7b9374578605,A. aegypti,1
+3c2ed601-40dd-5f1b-85c7-0ee3e1a3e241,A. anatina,1
+3c32cebb-c8be-5981-a2ee-8af2ed339a71,A. ayanganna,1
+90248600-6d58-56b2-afb1-f0eee5d68a6f,A. baeobatrachus,1
+93acdc19-85a7-546b-8a6b-95a8b0ab69a2,A. beebei,1
+67cea637-9041-56eb-a3b2-2ec136cd1d20,A. berda,1
+abc8266c-f874-5652-b014-f5f18f06231e,A. castellanii,1
+1fb3eb44-f2e7-5f14-a103-226754a25d96,A. concii,1
+c4664c5d-1948-5300-b0ad-eecf1417bf8c,A. cristati,1
+530af5a1-bc5a-58f5-a671-7f72606b9a76,A. degravillei,1
+852efdcb-faae-5d05-ab8c-fe5e52b14576,A. falkenbachi,1
+8674f357-1809-5dab-9a6f-07bc9c28d0d8,A. femoralis,1
+907d95dc-c918-5e91-9054-6cfc2e0cfb5f,A. ferox,1
+692fcf8b-e451-5f2c-9255-3fe1fcfba3c9,A. fulica,1
+ebbdf497-7743-5039-9a8b-dddd45667e78,A. granti,1
+a452e666-8f39-55d1-97dc-ca03df2dd973,A. haemastoma,1
+9c5dc600-d9d0-5954-b57a-e7f2a2f8d634,A. kaiei,1
+49252068-c699-5912-b727-7df82093eb5c,A. leucorraphe,1
+0045ffbf-b7e0-5203-8bd1-edd90b10edff,A. mcgrewi,1
+fe899af8-0c28-5d27-9fd3-865fec48115f,A. megacephalus,1
+c10fb044-4fba-5b97-88a0-0a6327c8e9bf,A. sp.,
+8290769d-3295-5853-a466-a33e4b67bcbd,"A. sp. """"Neblina"""" 2",1
+94bc515c-a4e8-56f4-a51b-c00394515563,"A. sp. """"Santa Maria"""" 1",1
+7c255354-f8dd-597d-b821-7339e1db5a77,"A. sp. """"Santa Maria"""" 2",1
+58444f3d-42a2-500e-a736-8ca5f45060a4,"A. sp. """"lago cipotuba""""",1
+26705be1-04b2-5816-b914-6d7b3739f593,A. sp. PEG-M2,1
+f803c0fa-b3d1-5302-8663-879dc1d20191,A. sp. PEG-M3,1
+30451f4c-8789-5c50-b68a-edd2687682b3,A. sp. Saul FG,1
+0300ad94-aaed-5b05-b1ab-9668b2621365,A. stepheni,1
+a071754a-eb12-5122-8e5c-6a16385ac49e,A. taxoides,1
+03eb6f3c-a62d-5cf5-a6a9-56d4eb48415e,A. tumefaciens,1
+f1af82e3-76a7-527a-a2c5-7d4cec87c7f1,A. vermis,1
+4869179b-953c-5efe-826f-1d9f8fa5e30c,A. watersoni,1
+63d9914e-8d2c-56b6-a8d7-95a92c6805e2,AND,
+14b67282-56e2-5b66-829a-fb007929ecd4,ANDGYR,
+37f9287d-cb4c-59dc-b54b-83a6c6d1865d,ANDTER,
+094475a4-5faf-5987-af2a-96d65ae0ea3e,ANDVIRDEC,
+aa689173-ade9-576f-8fd8-94ed64e1f774,ANTVIL,
+89fec206-5731-5996-9d58-45d4ff80ad7b,ARABIDOPSIS THALIANA,
+51b0e655-f3ad-5550-a018-de8b97e20abe,ARIPUR,
+a81d3edb-1f44-5df2-a63f-93891be9b5e4,Aalt Noct,1
+4575ba7a-57c6-5a03-b424-91fbe62f4963,Aamp Apam,1
+fbfbad85-37eb-577d-be34-abcbd632f288,Aardvark,1
+d4dee7c6-e4e9-5a41-9e7b-7fae0ccb84a4,Abe Heli,1
+d69bfc3f-fdd7-5464-a2bb-3e2f8178577a,Abobra,1
+aa2f48bb-8bec-5204-a6de-69e4beeeac80,Abroba,1
+64e07a21-57cc-57fe-a321-883afefd9bd3,Abrobra,1
+487b9a88-ea4f-52a6-a622-c7172b2619a7,Ac1,
+d6a5f7cc-e8bf-55ee-b4d3-3691d8f93fe4,AcBulk ino1,
+b46b4b59-d66d-5361-a745-8fc893fb6a1f,Acacia tortilis,1
+844f0812-b45f-5367-8cde-b6fd6f6cd067,Acaenolithus,1
+6177fc2d-ca78-57f6-8cd1-f1037a9a4d10,Acaenolithus cenomanicus,1
+6704199a-65d8-5b21-8912-38b36a81ace2,Acaenolithus galloisii,1
+2b386ae8-078c-5768-a2f2-f3fec4869345,Acaenolithus viriosus,1
+06954c3b-c8e2-54f4-a57e-1394ee3e46af,Acalvus,1
+93c69e8a-e498-5790-aec5-695ed0add8c3,Acanthina monodon,1
+a551e441-f657-5f8c-a155-c33febd0aa35,Acanthinula aculeata,1
+0dc2c929-15b5-5f93-b7e5-6b8698446efd,Acanthixalus sonjae,1
+6764ac89-70f9-5bad-850c-dd51ee209097,Acanthixalus spinosus,1
+b852941d-02d7-5a3a-9448-1ff5e0f46cd7,Acanthocardia,1
+8c76df7d-9684-543d-9df9-2cf41518c463,Acanthoica,1
+22a7ebee-5413-5ed5-9498-488354e1a5d2,Acanthoica acanthos,1
+b05a5d17-0d17-5679-b020-82bf986757bb,Acanthoica quattrospina,1
+05652ee1-d88a-5199-b03e-ac6e9d37b608,Acantholichen pannarioides,1
+bd1a60f8-e0a6-5aa8-983f-1f73dde42ff9,Acaryochloris marina,1
+f1677b18-5078-5e83-86e1-a5f19fba514b,Acave3,
+7241d3d0-69b8-5daa-8ec1-403a95d4db93,Acavidae,1
+fc1f0025-ca89-5d01-94be-6006fedd3800,Acavoidea,1
+b81793f6-c4e1-5671-bae3-391444a75244,Acavus haemastoma,1
+3186d908-d676-55a1-a60a-aa350929a8cd,Acavus phoenix,1
+13fd7b3d-ca1a-5252-bcac-6793b678acd5,Accipiter gentilis,1
+46bd938c-d561-5eac-8dee-bd80d0fbfcb6,Accipiter nisus,1
+8cb04843-49f7-56a3-84d9-93b56569a2e7,Acdp821,
+3e1050e4-3240-5e73-9216-fcd2c446d6c1,Acer,1
+557bffa3-4ad7-51ef-89db-b29f04eea2ae,Acer rubrum,1
+f877548a-0440-5311-831b-6e760b7a96d0,Achaeta unibulba,1
+7767b0a9-3fc1-5907-a490-1b7e91343d0b,Achatina bicarinata,1
+f3b7d72c-8099-5b58-a1ea-28047cfd18d7,Achatina fulica,1
+63acbdb3-0d8d-5732-9678-bf4bebeba970,Achatinella apexfulva,1
+03af401f-01b4-5705-b758-56f7e29ad8be,Achatinella bulimoides mistura,1
+1b064f52-8ed4-59a4-a60c-43acf59da8c5,Achatinella mustelina,1
+0f54bf83-f164-58fd-999c-b247134eb168,Achatinidae,1
+cdd7e384-99ad-5425-b5be-a27f0a178630,Achatinoidea,1
+5e868908-bff5-5fa9-a309-a6d561b99ad1,Acheta,1
+c02f6372-4be4-5f9e-a28b-42b1b9cf7af8,Acheta domesticus,1
+c3776864-be9d-5569-b099-00e51ed115cd,Achillea millefolium,1
+4154cc11-b1a3-5da8-b1a4-e71787dde53a,Achillea wilsoniana,1
+966179f5-aa93-5604-858f-167425a2907c,Achrom2,
+799120ca-c6b7-5c11-86a5-8c1864bfe4d8,Acicula banatica,1
+d07a5ac4-4c9b-509a-a485-64f3be5646c0,Acicula parcelineata,1
+4032a783-a7b3-5307-af9a-48c1420e89b8,Acicula perpusilla,1
+381d8e88-eb84-5091-8087-d0e85d731e8e,Acicula polita,1
+fb42001c-4258-5fb0-a67d-20911d35450c,Aciculiscala,1
+02be620b-fb07-5247-85a9-1c80aa225b3f,Acidiphilium cryptum,1
+22189680-1d54-5814-8ab0-61dccb123390,Acidithiobacillus ferrooxidans,1
+c6ee69ca-4f7e-544a-81d4-c7be518e4541,Acidocella1,
+d65ceba5-67e8-50ec-a88f-bd8ad5791f86,Acidovorax avenae subsp. avenae,1
+fc17182a-b949-5453-8d39-bf38a0149221,Acidovorax avenae subsp. citrulli,1
+0d73b987-5495-5e5f-8e53-fb9815117d4f,Acinetobacter johnsonii,1
+08472660-0035-50cb-9f85-ffd74a4fa19a,Acinonyx jubatus,1
+b98a6cf7-2366-5adc-a371-255d7093797b,Acinonyx jubatus jubatus,1
+5453eb79-b56a-526f-abc7-f7f8263e1c28,Acinonyx jubatus raineyi,1
+c99e6ff6-d065-538e-bd0c-02443164151b,Acirsa,1
+7cc3c78a-01d6-561d-9485-5f074e21171b,Acmaea,1
+14d1521d-e4c1-59fd-83d2-733ff62bb927,Acnistus arborescens,1
+665823d4-f5c4-59ec-8e35-e6f4a5d4757a,Acomp,1
+8b71fcfd-76f9-5e3c-a521-fd2d3d350196,Acontiinae,1
+0eab364f-bccc-566a-9d25-ba1c1c281458,Acorus americanus,1
+f73787f0-9ff8-5995-b84b-c7862c6f514f,Acrida,1
+927caae6-09dd-5433-b367-b2a12ec25f2f,Acrida turrita,1
+e47f2d34-70c4-59d7-bb91-cb003c1af0dc,Acrididae,1
+0804d4ba-241f-5d6f-91c9-1b512e11506a,Acridoidea,1
+f402e8da-f1dd-58cc-8d8e-33618e88b03f,Acris blanchardi,1
+af08056e-3294-5d5b-8a1d-6b3ad9d36d61,Acris crepitans,1
+50eb89b9-8dec-51cd-a135-196070030e93,Acris gryllus,1
+ff564000-cd38-554e-b41f-c86e3f535e80,Acrocephalus arundinaceus,1
+0175ddc5-a6de-5347-b9e3-a809924dfd83,Acrocephalus melanopogon,1
+2d3982c3-f8c5-57b2-8a50-fce384154811,Acrocephalus palustris,1
+ac1cc583-2393-51fd-b321-919237075cec,Acrocephalus schoenobaenus,1
+d769bd4d-8c03-5eab-842c-2f35635158ac,Acrocephalus scirpaceus,1
+aeb715b5-9916-5305-a481-d6aa791c9d50,Acronictinae,1
+b1f54e7f-caa3-59f6-9abf-0ef1a112e033,Acrophyllum australe,1
+65418649-906d-5243-af5e-6786569c616f,Acropora millepora,1
+14a6621b-8f8e-5424-a735-14e36f4a71e2,Acropora0m,
+a0813311-e2df-53fd-8f5f-62fb7a408eb0,Acsmithia elliptica,1
+99897913-ec77-58eb-9a17-ce7fed7f4160,Actenoidea,1
+cbf4cca7-6625-59b7-ab52-ce88d7617584,Acteocina,1
+6e57a85d-c350-5c2a-b500-20d33bb5c906,Acteon,1
+e86cf29f-4b2b-57b8-a469-c0a3d34b8233,Acteon tornatilis,1
+1860b741-40db-59ce-84bb-3b731ed65044,Acteonella,1
+57a328db-82f7-5040-ae51-6a2757d3d7f8,Acteonidae,1
+ed96d002-5810-580e-8217-b725ceeb6316,Actinobacteria,1
+34e780b5-982c-568a-bbd2-d1dfa963c2f2,Actinozygus,1
+ecfd5cdd-3a30-55a6-a868-a0daf6d0cc46,Actinozygus geometricus,1
+0ef7cec0-aa4c-5240-995e-e150a4961959,Actinozygus regularis,1
+9babc7a4-f5ef-5998-be3f-2c5a3352e672,Actinozygus reniformis,1
+4af94982-db85-5dc3-bae8-2ba68b1819d6,Actinozygus splendens,1
+e119f15d-3d49-5c46-828d-e6da009402f2,Actitis hypoleucos,1
+5238b1a9-7043-5ad0-b0c4-67b7d8a2ac11,Acusta despecta despecta,1
+13737707-13c3-5275-a6b2-436386a97e0c,Acuturris,1
+50dda018-1c1b-52dc-9ab9-198487c19a59,Acuturris scotus,1
+14753a34-e072-5874-b28f-556e932f3272,Adcrocuta eximia,1
+a9075502-44c0-51fd-bbe1-359f26bde5f8,Addax nasomaculatus,1
+540eb745-d46e-592c-b9a0-8a7d2a0ac402,Adelomyia melanogenys,1
+7ebc713c-2385-5ea2-b151-75202450fbb0,Adelophryne gutturosa,1
+5875aabe-cbbb-5d68-98d2-513a09855cc3,Adelotus brevis,1
+b6816fef-3a03-53a2-81e9-3126d31a2b5d,Adenomera andreae,1
+05097eda-98e7-5b43-9c98-b64b93b3921a,Adenomera heyeri,1
+19c4de40-86de-5aa5-b0a7-bf74390b88c7,Adenomera hylaedactyla,1
+e9f1b6f8-7e76-56d3-88a9-378a958c5890,Adenomera lutzi,1
+65945bf5-cccd-51e8-b6a1-a6f276ba7d7c,Adenomus kelaartii,1
+b3e44d55-1605-58c1-89c4-9f1ffbf2a4ae,Adh,1
+2e4ade1c-d621-52ba-8152-803ee44bae78,Admetula,1
+00873eea-c190-5217-b9b1-90db363c99a8,Aedes,1
+1634efaf-d706-5cdb-942b-2a72424fb937,Aedes taeniorhynchus,1
+765af1fa-aeef-5666-890e-bc568bcdabd2,Aegista elegantissima,1
+71519add-f61f-58f3-8e0a-7fadb0863cb3,Aegista hatakedai,1
+65e6fb9b-8e84-5441-be6d-b514fcecc320,Aegista oculus,1
+016d4e51-a31f-57d9-86e7-893466d08c7d,Aegista vermis,1
+2f089102-95b3-50dc-b379-58e950491f61,Aegithalos caudatus,1
+92941e48-5601-5d2c-a6db-05259b4aa903,Aegopinella epipedostoma,1
+adc323ad-f493-583c-959f-d02921a06c1e,Aegopinella minor,1
+e5eaed47-ce07-5fe5-812f-0ea23f2e3143,Aegopinella pura,1
+a003e3a4-9f60-5c71-b2e7-ec15347fbd2b,Aegotheles insignis,1
+396a20be-17f9-5ded-9612-b4ce4e817621,Aelurodon stirtoni,1
+d9caf70a-d308-5cf0-a279-c0734f071ec8,Aenona,1
+f249f28c-c955-58b5-ac48-afee96fadea6,Aepiryrymnus rufescens,1
+4216908a-d2ed-5b66-b6c0-5d512ab354b0,Aepyceros melampus,1
+10b696d2-1725-5ba5-b0f9-bab3537258f7,Aerodramus salangana,1
+8faa775d-0023-50e1-9283-e7ac984fc01e,Aerodramus vanikorensis,1
+d4052f77-a566-5a2c-8c0d-356d27affa0f,Aerolatae,1
+48bf4e43-98e7-595c-9fb7-96b615c6cc56,Aeronautes saxatalis,1
+a6eeb97d-e96e-5003-a890-e9250d6fe520,Aeropyrum pernix,1
+0bd83c93-2863-5045-91ba-8408b56152f2,Aeschynanthus,1
+a646276e-5bf0-541b-b108-b65b6ea96f44,Aesculus,1
+6e1436c9-3b48-5111-b06f-8ed05756a5b4,Afa Plus,1
+56a6053f-cfe0-5521-b2b8-5dc231b70b68,Afrix paradorsalis,1
+5b2cc707-adef-5d01-9e4e-2306f2300c49,Afrixalus delicatus,1
+6cdb8e00-9c79-55a8-9976-8567cf65b19f,Afrixalus dorsalis,1
+f1bbdc79-8d9c-57d3-8760-1ebe873b16cd,Afrixalus fornasini,1
+4d3decb8-e9ae-5a1a-b3dd-bcb354a1e53b,Afrixalus knysnae,1
+634ae852-7caf-5332-a5a3-227d31f025b1,Afrixalus laevis,1
+89c0a788-27c2-50cb-a0d8-5ab37ddd1307,Afrixalus paradorsalis,1
+cef0b434-bebe-58fc-aff0-fd947acabe59,Afrixalus stuhlmanni,1
+7999f7b9-e6ee-5d82-a7cf-df6ea22bf864,Afrostyrax kamerunensis,1
+0510b59b-3cab-5462-aead-d104dbb001cd,Afrostyrax lepidophyllus,1
+c21f7a4b-289a-5874-a7ab-080c33fd26ec,Agalychnis annae,1
+7b92c33c-0afe-5bfd-9bbe-a57fd3dd20af,Agalychnis callidryas,1
+f3c4ac25-9b01-57e1-bff8-b0701dae4fa9,Agalychnis litodryas,1
+4f717df7-a56f-5560-9fab-6392eb753ae0,Agalychnis moreletii,1
+53b613c1-8822-515e-aea3-d036980048d9,Agalychnis saltator,1
+0d5b3eff-4326-514b-b939-7a69e2bdf8e9,Agalychnis spurrelli,1
+c244678c-de07-58f9-a291-cccad4b9fba7,Agarodes distinctus,1
+6c2e3f3b-f84b-5b28-85bc-4a0bb0e66f98,Agaronia,1
+af01a09a-5adf-5fa5-adaf-02a95c206aa0,Agathemera,1
+190e9946-5eee-592a-88b9-1b09642eabf3,Agathemera crassa,1
+ac379dca-25e2-54da-bde0-fbd730e09315,Agave,1
+efaaceb8-3e87-572f-8fb9-74e0047ebd29,Agave tequilana,1
+c8a36f48-3292-52b8-9ebf-791d8c8bc81a,Agavoideae,1
+0d0c9a15-8443-5dce-85a4-0d27297d89f4,Agelaius phoeniceus,1
+aaeea070-e172-56c8-a66e-562868624405,Agerostrea,1
+364d93d0-3c1f-55ba-afb3-92280ddd45ca,Aglaeactis castelnaudii,1
+10e31907-7bc7-5fb2-8a19-85791c1e3d25,Aglaeactis cupripennis,1
+0f93d49e-caa5-5046-aff9-3f9db5418dcb,Aglaiocercus coelestis,1
+77260dc8-3b63-572d-b000-857b45cfb599,Aglaiocercus kingi,1
+8b532033-f0ff-5880-943a-cb5a71b640df,Agliinae,1
+3cc8f0bc-2458-591f-8c17-7d82669f2222,Aglyptodactylus laticeps,1
+00384b3e-be45-532e-8315-0a73e163b212,Aglyptodactylus madagascariensis,1
+556879f5-2801-5e80-9579-93f626232ce3,Agrm4,
+ede43b4a-65e9-5d6f-9cbc-b03a33b49d5a,Agro157,
+e5e3e81e-14d7-5def-912c-506ed2d108bc,Agrobacterium tumefaciens,1
+8431d64c-a759-5104-ac44-dc2dcadd9eea,Agrobacterium vitis,1
+b4079b15-0289-5d9f-9ee7-18db1211b38f,Agrostis capillaris,1
+a08f7be7-a45c-556a-b932-e2c948d5baba,Ahmuellerella,1
+20c97b6c-7135-5f3f-b8ff-6a9cd385ac5f,Ahmuellerella asper,1
+9e9a7b77-ba7a-5490-864b-2b09eb47cf7f,Ahmuellerella oblata,1
+223596c3-432b-57be-8a8a-4ad5e347d0aa,Ahmuellerella octoradiata,1
+d5d73a03-f1a1-5b1b-b83b-0497699f53e3,Ahmuellerella plebius,1
+dadf53b1-19f3-50de-b255-e8ac3d2ad48a,Ahmuellerella regularis,1
+f17d548f-9513-5d59-83f4-7b7b2634d181,Ahmuellerella retiformis,1
+3419a374-8001-504c-9525-3994ef09af80,Ailanthus,1
+bab5e550-7604-5b95-aec8-6fdca1315d78,Ainf Noct,1
+9b5466a3-0bcc-5cc8-be77-54cd8101b62d,Aip Noct,1
+6988ab6f-5dd3-598e-8d9e-99cc006390b4,Akebia,1
+ac61ed72-c89a-50dd-857a-f829c99b053f,AlBulk er2,
+97ae496e-8b4c-58a8-9476-7fb2395ef024,Alauda arvensis,1
+2588643b-6fbe-5ddb-882f-df549743e72b,Albatrellus skamanius,1
+059e8592-db09-5586-a02c-5865929f1c04,Albericus laurini,1
+cb3606b2-e31b-5970-b93a-c5f21a30f621,Albinaria coerulea,1
+b664ea27-9f02-5814-9d4c-700c6264354c,Albizzia,1
+91f428b0-7f6a-558c-87c2-778b9e7b0ebd,Albula vulpes,1
+43050ada-9e63-5318-81e0-79a4179bbda5,Alca2,
+7c2e4f8b-683e-5d84-8e24-2c4f3b75d193,Alcedo atthis,1
+0c903a93-94b7-59b8-8290-9280fb19bbcf,Alcelaphus buselaphus,1
+427d2d32-03db-59b6-ac4a-538207652ade,Alcelaphus lichtensteinii,1
+5e98eb69-07e8-508c-a75f-f7d691e5f8c1,Alces alces,1
+1954ba8d-d9b2-52a5-a822-d3e9a28d305f,Alcospira marginata,1
+5ce2ebce-cf51-536d-9386-bbdcc6dd4633,Aldef5,
+8d6be464-e83f-5191-86f4-b5d5b2818145,Alectryonia,1
+78bc22fe-7a93-5b42-af8e-5f5657488c7e,Aletes,1
+7dd0cb18-288c-5004-a343-e18ecea6e6e2,Alexteroon obstetricans,1
+c76b14c5-c09d-5222-a004-e81561d75b15,Aleyrodidae,1
+3f6ee929-0511-52f9-8cfe-52bffdf4215d,Alfae5,
+6f0f0b52-bef5-572a-a5ab-d1b03b7c1a44,Algirosphaera,1
+4098d2de-ea97-52d7-9f34-6c0df0b01032,Algirosphaera robusta,1
+13fc7444-589f-55c9-9372-fa9f54e47645,Algoriphagus,1
+5433252f-0361-5eb8-bb2b-363030e14720,Alinda fallax,1
+6399f8b3-20d0-5bed-ba56-c36d8170694b,Alinda jugularis,1
+abfadbb3-e93e-5d37-9875-34d9c9c7c6bd,Alinda stabilis,1
+b0e2d6eb-df1b-5685-ae99-253a8354fa1c,Alinda viridana,1
+f9232e76-3093-5ec6-af0a-2c6f8c765803,Aliofusus,1
+3099fda6-f3e6-5b6e-ba9b-38e0e0d9443c,Alkalilimnicola ehrlichei,1
+47d7552f-d12b-5ca4-90d3-95d48b401217,Alkaliphilus metalliredigenes,1
+5724011a-2181-549c-ac11-5744421eaf9a,Allancastria.342,3
+8a884478-a717-5f79-b9cf-b428c77ce1b1,Allemannites,1
+34f74172-85f3-59b5-b9ac-584b350dcd72,Allemannites striatus,1
+cf3874d9-1a53-5747-a617-4ee0469746d7,Allenopithecus nigroviridis,1
+c7932818-40c0-5272-98ac-fe94831e74a1,Allium,1
+f5f069ec-a9a2-5094-a3f5-2ab6fbcc4e7f,Allium cepa,1
+ab525146-868a-54be-b7af-62c6f856c1f0,Allo1,
+a0613d22-0287-5dd6-a3bd-c13fb4e476dd,Allobates alagoanus,1
