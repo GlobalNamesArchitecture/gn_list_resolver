@@ -17,24 +17,29 @@ describe "features" do
   end
 
   context "combining acceptedName output" do
-    it "gives accepted name for all matches" do
-      pending("need to resolve CoL error with name \
-               'Testechiniscus spitsbergensis (Scourfield, 1897)'")
+    it "gives accepted name for all matches"
+    # do
+    #   opts = { output: "/tmp/output.csv",
+    #            input: FILES[:sciname],
+    #            data_source_id: 1, skip_original: true }
+    #   GnListResolver.run(opts)
+    #   CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
+    #     next unless r["matchedEditDistance"] == "0"
+    #     expect(r["matchedName"].size).to be > 1
+    #     expect(r["acceptedName"].size).to be > 1
+    #   end
+    #   FileUtils.rm(opts[:output])
+    # end
+  end
 
+  context "dealing with errors" do
+    it "deals with errors gracefully" do
       opts = { output: "/tmp/output.csv",
-               input: FILES[:sciname],
-               data_source_id: 1, skip_original: true }
-      GnListResolver.run(opts)
-      CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
-        next unless r["matchedEditDistance"] == "0"
-        expect(r["matchedName"].size).to be > 1
-        expect(r["acceptedName"].size).to be > 1
-        if r["synonymStatus"] == "true"
-          expect(r["matchedName"]).to_not eq r["acceptedName"]
-        else
-          expect(r["matchedName"]).to eq r["acceptedName"]
-        end
-      end
+               input: FILES[:with_errors],
+               data_source_id: 1, skip_original: true,
+               alt_headers: %w[taxonID scientificName rank] }
+      stats = GnListResolver.run(opts)
+      expect(stats.stats[:matches][:ErrorInMatch]).to be 4
       FileUtils.rm(opts[:output])
     end
   end
