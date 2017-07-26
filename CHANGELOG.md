@@ -1,5 +1,9 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.0.3.1
+
+* @dimus - Rebase of `gn_crossmap` v3.0.3 to `gn_list_resolver`
+
 ## 3.0.3
 
 * @dimus - Fixes #33 infraspecies rank is given for all 'unknown' infra-specific

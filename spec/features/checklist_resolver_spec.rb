@@ -23,12 +23,12 @@ describe "features" do
       opts = { output: "/tmp/output.csv",
                input: FILES[:all_caps],
                data_source_id: 1, skip_original: true }
-      stats_caps = GnCrossmap.run(opts)
+      stats_caps = GnListResolver.run(opts)
       FileUtils.rm(opts[:output])
       opts = { output: "/tmp/output.csv",
                input: FILES[:all_fields],
                data_source_id: 1, skip_original: true }
-      stats_nocaps = GnCrossmap.run(opts)
+      stats_nocaps = GnListResolver.run(opts)
       expect(stats_caps.stats[:matches]).to eq stats_nocaps.stats[:matches]
       FileUtils.rm(opts[:output])
     end
@@ -48,18 +48,6 @@ describe "features" do
     #   end
     #   FileUtils.rm(opts[:output])
     # end
-  end
-
-  context "dealing with errors" do
-    it "deals with errors gracefully" do
-      opts = { output: "/tmp/output.csv",
-               input: FILES[:with_errors],
-               data_source_id: 1, skip_original: true,
-               alt_headers: %w[taxonID scientificName rank] }
-      stats = GnListResolver.run(opts)
-      expect(stats.stats[:matches][:ErrorInMatch]).to be 4
-      FileUtils.rm(opts[:output])
-    end
   end
 
   context "use alternative headers" do
@@ -116,11 +104,11 @@ describe "features" do
   context "stop trigger" do
     it "stops process with a 'STOP' command" do
       opts = { output: "/tmp/output.csv",
-               input: FILES[:sciname],
+               input: FILES[:large],
                data_source_id: 1, skip_original: true }
       GnListResolver.run(opts) { "STOP" }
       lines_num = File.readlines(opts[:output]).size
-      expect(lines_num).to be 1521
+      expect(lines_num).to be 1007
       FileUtils.rm(opts[:output])
     end
   end
