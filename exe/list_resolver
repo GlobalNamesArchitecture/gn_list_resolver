@@ -20,6 +20,8 @@ opts = Trollop.options do
       default: CATALOGUE_OF_LIFE)
   opt(:skip_original, "If given, only 'taxonID' is shown " \
       "from the original input", type: :boolean)
+  opt(:debug, "If given, prints statistics of name resolution to STDOUT",
+      short: "D", type: :boolean)
 end
 
 Trollop.die :input, "must be set" if opts[:input].nil?
