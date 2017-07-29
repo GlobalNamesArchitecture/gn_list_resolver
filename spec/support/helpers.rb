@@ -8,6 +8,8 @@ def io(file, mode = "r:utf-8")
 end
 
 FILES = {
+  large: "#{files_path}/2002-lines.csv",
+  all_caps: "#{files_path}/all-caps.csv",
   all_fields: "#{files_path}/all-fields-semicolon.csv",
   all_fields_tiny: "#{files_path}/all-fields-tiny.csv",
   csv_relaxed: "#{files_path}/csv-relaxed.csv",

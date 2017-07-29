@@ -58,7 +58,7 @@ module GnListResolver
       when /^sub/
         "subspicies"
       else
-        rank
+        "infraspecies"
       end
     end
   end

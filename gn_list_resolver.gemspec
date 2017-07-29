@@ -8,7 +8,7 @@ require "gn_list_resolver/version"
 # rubocop:disable Metrics/BlockLength:
 
 Gem::Specification.new do |gem|
-  gem.required_ruby_version = ">= 2.3"
+  gem.required_ruby_version = ">= 2.4"
   gem.name          = "gn_list_resolver"
   gem.version       = GnListResolver::VERSION
   gem.license       = "MIT"

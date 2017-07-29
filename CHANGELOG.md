@@ -1,5 +1,20 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.0.3.1
+
+* @dimus - Rebase of `gn_crossmap` v3.0.3 to `gn_list_resolver`
+
+## 3.0.3
+
+* @dimus - Fixes #33 infraspecies rank is given for all 'unknown' infra-specific
+           ranks (when rank is not given)
+
+* @dimus - Fixes #32 normalize capitalization of ranks according to Codes
+
+## 3.0.2
+
+* @dimus - Fixes #32 normalize capitalization of ranks according to Codes
+
 ## 3.0.1.5
 
 * @dimus - handles errors on server side
