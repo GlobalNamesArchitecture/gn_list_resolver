@@ -1,5 +1,9 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.0.3.2
+
+@alexander-myltsev, @dimus - add debug to show stats
+
 ## 3.0.3.1
 
 * @dimus - Rebase of `gn_crossmap` v3.0.3 to `gn_list_resolver`
