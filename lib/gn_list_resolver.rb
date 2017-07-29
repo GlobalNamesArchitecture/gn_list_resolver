@@ -6,6 +6,7 @@ require "rest_client"
 require "tempfile"
 require "logger"
 require "logger/colors"
+require "pp"
 require "biodiversity"
 require "gn_uuid"
 require "graphql/client"
@@ -38,7 +39,7 @@ module GnListResolver
       writer = create_writer(reader, output_io, opts)
       resolver = create_resolver(writer, opts)
       block_given? ? resolver.resolve(data, &Proc.new) : resolver.resolve(data)
-      puts resolver.stats.stats if opts[:debug]
+      logger.warn(resolver.stats.stats.pretty_inspect) if opts[:debug]
       resolver.stats
     end
 
