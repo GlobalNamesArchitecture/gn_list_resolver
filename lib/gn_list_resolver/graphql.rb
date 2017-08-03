@@ -14,8 +14,8 @@ module GnListResolver
           nameResolver(names: $names, dataSourceIds: $dataSourceIds) {
             total suppliedId suppliedInput
             results {
-              name { name }
-              canonicalName { name }
+              name { value }
+              canonicalName { value }
               synonym
               matchType { kind score editDistance }
               taxonId classification { pathRanks }
