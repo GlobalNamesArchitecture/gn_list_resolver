@@ -62,11 +62,11 @@ module GnListResolver
 
     def prepare_data(datum, result)
       [MATCH_TYPES[result.match_type.kind.to_sym],
-       datum.supplied_input, result.name.name,
-       result.canonical_name.name, @input[datum.supplied_id][:rank],
+       datum.supplied_input, result.name.value,
+       result.canonical_name.value, @input[datum.supplied_id][:rank],
        matched_rank(result),
        result.synonym,
-       result.name.name, # TODO: should be `current_name_string` field
+       result.name.value, # TODO: should be `current_name_string` field
        result.match_type.edit_distance,
        result.score.value ? result.score.value.round(3) : nil,
        result.taxon_id]
