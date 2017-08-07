@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# GnListResolver::test
 module GnListResolver
   # Sends data to GN Resolver and collects results
   class Resolver
@@ -8,9 +7,10 @@ module GnListResolver
     QUERY = GRAPHQL.client.parse(GRAPHQL.query)
     attr_reader :stats
 
-    def initialize(writer, data_source_id, stats)
+    def initialize(writer, data_source_id, stats, with_classification = false)
       @stats = stats
-      @processor = GnListResolver::ResultProcessor.new(writer, @stats)
+      @processor = GnListResolver::ResultProcessor.new(writer, @stats,
+                                                       with_classification)
       @ds_id = data_source_id
       @count = 0
       @current_data = {}
@@ -21,12 +21,7 @@ module GnListResolver
       update_stats(data.size)
       block_given? ? process(data, &Proc.new) : process(data)
       wrap_up
-
-      if block_given?
-        yield(@stats.stats)
-      else
-        @stats.stats
-      end
+      block_given? ? yield(@stats.stats) : @stats.stats
     end
 
     private
@@ -67,11 +62,12 @@ module GnListResolver
 
     def collect_names(slice)
       @current_data = {}
-      slice.each do |row|
+      slice.each_with_object([]) do |row, str|
         id = row[:id].strip
         @current_data[id] = row[:original]
         @processor.input[id] = { rank: row[:rank] }
-      end
+        str << "#{id}|#{row[:name]}"
+      end.join("\n")
     end
 
     def variables(names)

@@ -17,9 +17,10 @@ module GnListResolver
               results {
                 name { value }
                 canonicalName { value }
+                acceptedName { name { value } }
                 synonym
                 matchType { kind score editDistance }
-                taxonId classification { pathRanks }
+                taxonId classification { path pathRanks }
                 score { value parsingQuality }
               }
             }

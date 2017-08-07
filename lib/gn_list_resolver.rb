@@ -54,17 +54,23 @@ module GnListResolver
     end
 
     def find_id(row, name)
-      row.key?(:taxonid) ? row[:taxonid].strip : GnUUID.uuid(name)
+      if row.key?(:taxonid) && row[:taxonid]
+        row[:taxonid].to_s.strip
+      else
+        GnUUID.uuid(name.to_s)
+      end
     end
 
     private
 
     def create_resolver(writer, opts)
-      Resolver.new(writer, opts.data_source_id, opts.stats)
+      Resolver.new(writer, opts.data_source_id,
+                   opts.stats, opts.with_classification)
     end
 
     def create_writer(reader, output_io, opts)
-      Writer.new(output_io, reader.original_fields, output_name(opts.output))
+      Writer.new(output_io, reader.original_fields,
+                 output_name(opts.output), opts.with_classification)
     end
 
     def create_reader(input_io, opts)

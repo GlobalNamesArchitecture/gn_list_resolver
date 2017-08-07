@@ -4,7 +4,7 @@
 require "trollop"
 require "gn_list_resolver"
 
-puts "This program requires Ruby >= v. 2.1.0" if RUBY_VERSION < "2.1.0"
+puts "This program requires Ruby >= v. 2.4.1" if RUBY_VERSION < "2.4.1"
 
 CATALOGUE_OF_LIFE = 1
 OUTPUT = "output.csv"
@@ -20,6 +20,8 @@ opts = Trollop.options do
       default: CATALOGUE_OF_LIFE)
   opt(:skip_original, "If given, only 'taxonID' is shown " \
       "from the original input", type: :boolean)
+  opt(:with_classification, "If given, returns classification path of " \
+                            "matched names", type: :boolean)
   opt(:debug, "If given, prints statistics of name resolution to STDOUT",
       short: "D", type: :boolean)
 end

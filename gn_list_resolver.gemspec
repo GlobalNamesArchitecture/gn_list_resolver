@@ -31,21 +31,19 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^exe/}) { |f| File.basename(f) }
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "trollop", "~> 2.1"
   gem.add_dependency "biodiversity", "~> 3.1"
-  gem.add_dependency "rest-client", "~> 2.0"
-  gem.add_dependency "logger-colors", "~> 1.0"
-  gem.add_dependency "graphql-client", "~> 0.11.3"
   gem.add_dependency "gn_uuid", "~> 0.5"
+  gem.add_dependency "graphql-client", "~> 0.11.3"
+  gem.add_dependency "logger-colors", "~> 1.0"
+  gem.add_dependency "rest-client", "~> 2.0"
+  gem.add_dependency "trollop", "~> 2.1"
 
   gem.add_development_dependency "bundler", "~> 1.7"
-  gem.add_development_dependency "rake", "~> 11.0"
+  gem.add_development_dependency "byebug", "~> 9.0"
+  gem.add_development_dependency "coveralls", "~> 0.8"
+  gem.add_development_dependency "rake", "~> 12.0"
   gem.add_development_dependency "rspec", "~> 3.2"
   gem.add_development_dependency "rubocop", "~> 0.49"
-  gem.add_development_dependency "coveralls", "~> 0.8"
-  gem.add_development_dependency "byebug", "~> 9.0"
-  gem.add_development_dependency "guard", "~> 2.14"
-  gem.add_development_dependency "guard-rspec", "~> 4.7"
 end
 
 # rubocop:enable Metrics/BlockLength:

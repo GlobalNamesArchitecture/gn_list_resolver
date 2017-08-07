@@ -1,5 +1,42 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.2.0.1
+
+@dimus, @alexander-myltsev - sync with `gn_crossmap`'s 3.2.0, current name is
+                             still a bit broken
+
+## 3.2.0
+
+* @dimus - Add a column `matchSize` with number of matches for each name
+
+## 3.1.5
+
+* @dimus - Fix number of columns in the output when there is no taxon_id given
+           and skip_original flag is set in options
+
+## 3.1.4
+
+* @dimus - test typo
+
+## 3.1.3
+
+* @dimus - Fix formatting bug for empty results, remove BOM char from headers
+
+## 3.1.2
+
+* @dimus - Fixes #37 tab is now default if separator is not found
+
+## 3.1.1
+
+* @dimus - Fixes #36 move edit distance close to canonical forms in output
+
+## 3.1.0
+
+* @dimus - Fixes #34 add canonical form input
+
+* @dimus - Fixes #35 optionally returns classification path
+
+
 ## 3.0.3.4
 
 @alexander-myltsev - make compatible with API changes

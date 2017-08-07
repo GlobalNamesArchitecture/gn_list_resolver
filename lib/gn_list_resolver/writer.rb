@@ -3,9 +3,11 @@
 module GnListResolver
   # Saves output from GN Resolver to disk
   class Writer
-    def initialize(output_io, original_fields, output_name)
+    def initialize(output_io, original_fields, output_name,
+                   with_classification = false)
       @output_io = output_io
       @output_fields = output_fields(original_fields)
+      @output_fields << :classification if with_classification
       @output = CSV.new(@output_io, col_sep: "\t")
       @output << @output_fields
       @output_name = output_name
@@ -24,9 +26,10 @@ module GnListResolver
     private
 
     def output_fields(original_fields)
-      original_fields + %i[matchedType inputName matchedName
-                           matchedCanonicalForm inputRank matchedRank
-                           synonymStatus acceptedName matchedEditDistance
+      original_fields + %i[matchedType matchSize inputName matchedName
+                           inputCanonicalForm matchedCanonicalForm
+                           matchedEditDistance inputRank
+                           matchedRank synonymStatus acceptedName
                            matchedScore matchTaxonID]
     end
   end

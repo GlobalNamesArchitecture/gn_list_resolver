@@ -26,7 +26,7 @@ module GnListResolver
     end
 
     def prepare_field(field)
-      field = field.to_s.tr(":", "/")
+      field = field.to_s.tr(":", "/").delete("\u{feff}")
       return :none if field == ""
       field.split("/")[-1].strip.downcase.to_sym
     end
@@ -41,7 +41,7 @@ module GnListResolver
     end
 
     def prepare_original
-      @skip_original ? [@row_hash[:taxonid]] : @row.map(&:last)
+      @skip_original ? [@row_hash[:taxonid]].compact : @row.map(&:last)
     end
 
     def collector_factory
