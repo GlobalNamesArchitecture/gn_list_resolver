@@ -12,14 +12,16 @@ module GnListResolver
       @query = <<~GRAPHQL_QUERY
         query($names: [name!]!, $dataSourceIds: [Int!]) {
           nameResolver(names: $names, dataSourceIds: $dataSourceIds) {
-            total suppliedId suppliedInput
-            results {
-              name { value }
-              canonicalName { value }
-              synonym
-              matchType { kind score editDistance }
-              taxonId classification { pathRanks }
-              score { value parsingQuality }
+            responses {
+              suppliedId suppliedInput
+              results {
+                name { value }
+                canonicalName { value }
+                synonym
+                matchType { kind score editDistance }
+                taxonId classification { pathRanks }
+                score { value parsingQuality }
+              }
             }
           }
         }

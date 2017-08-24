@@ -85,7 +85,7 @@ module GnListResolver
 
       res = GRAPHQL.client.query(QUERY, variables: variables(names))
       if res.data
-        @processor.process(res.data.name_resolver, @current_data)
+        @processor.process(res.data.name_resolver.responses, @current_data)
       else
         single_remote_resolve(names)
       end

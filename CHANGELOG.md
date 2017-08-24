@@ -1,5 +1,9 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.0.3.4
+
+@alexander-myltsev - make compatible with API changes
+
 ## 3.0.3.3
 
 @alexander-myltsev - make compatible with API changes
