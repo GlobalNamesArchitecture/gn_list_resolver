@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
 # Namespace module for crossmapping checklists to GN sources
+<<<<<<< HEAD:lib/gn_list_resolver/version.rb
 module GnListResolver
   VERSION = "3.3.1.0"
+=======
+module GnCrossmap
+  VERSION = "3.3.1"
+>>>>>>> 36115cc... better error log:lib/gn_crossmap/version.rb
 
   def self.version
     VERSION

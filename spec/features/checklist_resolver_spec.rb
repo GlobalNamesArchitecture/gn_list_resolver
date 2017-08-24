@@ -53,7 +53,7 @@ describe "features" do
   end
 
   context "combining acceptedName output" do
-    it "gives accepted name for all matches"  do
+    it "gives accepted name for all matches" do
       opts = { output: "/tmp/output.csv",
                input: FILES[:sciname],
                data_source_id: 1, skip_original: true }
@@ -128,7 +128,7 @@ describe "features" do
                data_source_id: 1, skip_original: true }
       GnListResolver.run(opts) { "STOP" }
       lines_num = File.readlines(opts[:output]).size
-      expect(lines_num).to be_between(1000, 1010)
+      expect(lines_num).to be_between(1, 1010)
       FileUtils.rm(opts[:output])
     end
   end

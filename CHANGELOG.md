@@ -17,6 +17,16 @@
 @dimus, @alexander-myltsev - sync with `gn_crossmap`'s 3.2.0, current name is
                              still a bit broken
 
+## 3.3.1
+
+* @dimus - Better error message in logger
+
+## 3.3.0
+
+* @dimus - Add option `opts.threads` for threads number for concurrent jobs.
+           Resolution now happens concurrently if the number of jobs is more
+           than 1. Max amount of jobs is 10.
+
 ## 3.2.0
 
 * @dimus - Add a column `matchSize` with number of matches for each name

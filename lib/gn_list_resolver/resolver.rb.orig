@@ -82,7 +82,11 @@ module GnListResolver
         update_stats(stats)
         @processor.process(results, current_data)
       else
-        GnResolver.logger.error(job.reason.message)
+<<<<<<< HEAD:lib/gn_list_resolver/resolver.rb
+        GnListResolver.logger.error("Remote resolver server failed")
+=======
+        GnCrossmap.logger.error(job.reason.message)
+>>>>>>> 36115cc... better error log:lib/gn_crossmap/resolver.rb
       end
     end
 

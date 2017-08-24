@@ -5,14 +5,13 @@ describe GnListResolver::Resolver do
        subfamily tribe subtribe genus subgenus section species subspecies
        variety form ScientificNameAuthorship)
   end
-  let(:stats) { GnListResolver::Stats.new }
-  let(:skip_original) { false }
+  let(:opts) { GnListResolver.opts_struct({}) }
   let(:writer) do
     GnListResolver::Writer.new(io(FILES[:output], "w:utf-8"),
                            original_fields,
                            FILES[:output])
   end
-  subject { GnListResolver::Resolver.new(writer, 1, stats) }
+  subject { GnListResolver::Resolver.new(writer, opts) }
 
   describe ".new" do
     it "creates an instance" do
@@ -23,7 +22,7 @@ describe GnListResolver::Resolver do
   describe "#resolve" do
     let(:data) do
       GnListResolver::Reader.new(io(FILES[:all_fields]),
-                             FILES[:all_fields], true, [], stats).
+                                 FILES[:all_fields], true, [], opts.stats).
         read
     end
 
@@ -35,10 +34,10 @@ describe GnListResolver::Resolver do
       let(:data) do
         GnListResolver::Reader.new(io(FILES[:all_fields_tiny]),
                                FILES[:all_fields_tiny],
-                               skip_original, [], stats).read
+                               opts.skip_original, [], opts.stats).read
       end
 
-      it "resolves data by every name" do
+      it "exits with an error log" do
         allow(RestClient).to receive(:post) { raise RestClient::Exception }
         allow(GnListResolver).to receive(:log) {}
         expect(subject.resolve(data))
