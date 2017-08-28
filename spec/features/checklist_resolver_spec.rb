@@ -47,27 +47,25 @@ describe "features" do
       res = CSV.open(opts[:output], col_sep: "\t", headers: true).map do |r|
         r["matchSize"]
       end.uniq.sort
-      expect(res).to eq %w[0 1 2 479]
+      expect(res).to eq %w[0 1 2 348]
       FileUtils.rm(opts[:output])
     end
   end
 
   context "combining acceptedName output" do
-    it "gives accepted name for all matches"
-    # do
-    #   opts = { output: "/tmp/output.csv",
-    #            input: FILES[:sciname],
-    #            data_source_id: 1, skip_original: true }
-    #   GnListResolver.run(opts)
-    #   require "byebug"; byebug
-    #   CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
-    #     next unless r["synonymStatus"] == "true"
-    #     expect(r["matchedName"].strip).to_not eq ""
-    #     expect(r["acceptedName"].strip).to_not eq ""
-    #     expect(r["matchedName"]).to_not eq r["acceptedName"]
-    #   end
-    #   FileUtils.rm(opts[:output])
-    # end
+    it "gives accepted name for all matches"  do
+      opts = { output: "/tmp/output.csv",
+               input: FILES[:sciname],
+               data_source_id: 1, skip_original: true }
+      GnListResolver.run(opts)
+      CSV.open(opts[:output], col_sep: "\t", headers: true).each do |r|
+        next unless r["synonymStatus"] == "true"
+        expect(r["matchedName"].strip).to_not eq ""
+        expect(r["acceptedName"].strip).to_not eq ""
+        expect(r["matchedName"]).to_not eq r["acceptedName"]
+      end
+      FileUtils.rm(opts[:output])
+    end
   end
 
   context "use alternative headers" do
@@ -130,7 +128,7 @@ describe "features" do
                data_source_id: 1, skip_original: true }
       GnListResolver.run(opts) { "STOP" }
       lines_num = File.readlines(opts[:output]).size
-      expect(lines_num).to eq 1004
+      expect(lines_num).to be_between(1000, 1010)
       FileUtils.rm(opts[:output])
     end
   end

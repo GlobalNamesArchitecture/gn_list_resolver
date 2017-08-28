@@ -1,5 +1,9 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.2.0.2
+
+@alexander-myltsev - bring tests in accordance to changes in gnindex API
+
 ## 3.2.0.1
 
 @dimus, @alexander-myltsev - sync with `gn_crossmap`'s 3.2.0, current name is

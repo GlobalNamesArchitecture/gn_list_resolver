@@ -80,7 +80,11 @@ module GnListResolver
     # rubocop:enable all
 
     def current_name(result)
-      result.accepted_name.name.value || result.name.value
+      if result.accepted_name.nil?
+        result.name.value
+      else
+        result.accepted_name.name.value
+      end
     end
 
     def canonical(name_string)
