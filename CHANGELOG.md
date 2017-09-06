@@ -2,6 +2,10 @@
 
 ## 3.2.0.2
 
+@dimus - bring tests in accordance to changes in gnindex database
+
+## 3.2.0.2
+
 @alexander-myltsev - bring tests in accordance to changes in gnindex API
 
 ## 3.2.0.1

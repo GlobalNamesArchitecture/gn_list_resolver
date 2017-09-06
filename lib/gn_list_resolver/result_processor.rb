@@ -97,6 +97,7 @@ module GnListResolver
     end
 
     def matched_rank(result)
+      return nil unless result.classification.path_ranks
       result.classification.path_ranks.split("|").last
     end
 
@@ -105,7 +106,8 @@ module GnListResolver
     def classification(result)
       return nil if result.classification.path.to_s.strip == ""
       path = result.classification.path.split("|")
-      ranks = result.classification.path_ranks.split("|")
+      ranks_data = result.classification.path_ranks
+      ranks = ranks_data ? ranks_data.split("|") : []
       if path.size == ranks.size
         path = path.zip(ranks).map { |e| "#{e[0]}(#{e[1]})" }
       end
