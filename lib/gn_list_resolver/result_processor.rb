@@ -68,7 +68,7 @@ module GnListResolver
     def prepare_data(datum, result, match_size)
       res = [MATCH_TYPES[result.match_type.kind.to_sym], match_size,
              datum.supplied_input, result.name.value,
-             canonical(datum.supplied_input), result.canonical_name.value,
+             canonical(datum.supplied_input), result_canonical(result),
              result.match_type.edit_distance, @input[datum.supplied_id][:rank],
              matched_rank(result), result.synonym, current_name(result),
              result.score.value ? result.score.value.round(3) : nil,
@@ -85,6 +85,11 @@ module GnListResolver
       else
         result.accepted_name.name.value
       end
+    end
+
+    def result_canonical(result)
+      return nil unless result.canonical_name
+      result.canonical_name.value
     end
 
     def canonical(name_string)

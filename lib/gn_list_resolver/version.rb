@@ -2,7 +2,7 @@
 
 # Namespace module for crossmapping checklists to GN sources
 module GnListResolver
-  VERSION = "3.2.0.3"
+  VERSION = "3.2.0.4"
 
   def self.version
     VERSION

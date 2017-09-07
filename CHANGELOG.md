@@ -1,6 +1,10 @@
 # ``gn_list_resolver`` CHANGELOG
 
-## 3.2.0.2
+## 3.2.0.4
+
+@dimus - make it possible for result.canonical to be nil
+
+## 3.2.0.3
 
 @dimus - bring tests in accordance to changes in gnindex database
 
