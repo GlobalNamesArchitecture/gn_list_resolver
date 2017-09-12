@@ -25,6 +25,14 @@
 @dimus, @alexander-myltsev - sync with `gn_crossmap`'s 3.2.0, current name is
                              still a bit broken
 
+## 4.0.1
+
+* @dimus - Clean up resolution stats
+
+## 4.0.0
+
+* @dimus - Better estimation for time left for resolver and speed
+
 ## 3.3.1
 
 * @dimus - Better error message in logger

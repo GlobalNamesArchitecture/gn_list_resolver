@@ -24,7 +24,6 @@ module GnListResolver
 
     def write_empty_result(datum)
       @stats.stats[:matches][MATCH_TYPE_EMPTY] += 1
-      @stats.stats[:resolved_records] += 1
       res = compile_empty_result(datum)
       @writer.write(res)
     end
@@ -55,7 +54,6 @@ module GnListResolver
                            match_type_min.match_type.kind.to_sym
                          end
       @stats.stats[:matches][match_type_value] += 1
-      @stats.stats[:resolved_records] += 1
     end
 
     def compile_result(datum, result, match_size)

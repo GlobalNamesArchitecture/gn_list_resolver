@@ -7,9 +7,16 @@ module GnListResolver
 
     def initialize
       @stats = { status: :init, total_records: 0, ingested_records: 0,
+<<<<<<< HEAD:lib/gn_list_resolver/stats.rb
+                 resolved_records: 0, ingestion_span: nil,
+                 resolution_span: nil, ingestion_start: nil,
+                 resolution_start: nil, resolution_stop: nil,
+                 last_batches_time: [], matches: init_matches,
+                 errors: [] }
+=======
                  ingestion_span: nil, ingestion_start: nil,
                  resolution: eta_struct,
-                 matches: init_matches, errors: [] }
+                 matches: match_types, errors: [] }
       @smooth = 0.05
     end
 
@@ -25,17 +32,26 @@ module GnListResolver
       eta[:eta] = (@stats[:total_records] -
                    @stats[:resolution][:completed_records]) /
                   eta[:speed]
+>>>>>>> 2a4afb8... Fix #42 - better speed estimation:lib/gn_crossmap/stats.rb
     end
 
     private
 
+<<<<<<< HEAD:lib/gn_list_resolver/stats.rb
     def init_matches
       MATCH_TYPES.keys.each_with_object({}) { |t, h| h[t] = 0 }
-    end
-
+=======
     def eta_struct
       { start_time: nil, completed_records: 0,
         speed: nil, eta: nil, stop_time: nil }
+    end
+
+    def match_types
+      matches = GnCrossmap::MATCH_TYPES.keys
+      matches.each_with_object({}) do |key, obj|
+        obj[key] = 0
+      end
+>>>>>>> 2a4afb8... Fix #42 - better speed estimation:lib/gn_crossmap/stats.rb
     end
 
     def penalty_adj(threads, val, pnlt)
