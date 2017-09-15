@@ -11,7 +11,8 @@ module GnListResolver
       @client = GraphQL::Client.new(schema: schema, execute: http)
       @query = <<~GRAPHQL_QUERY
         query($names: [name!]!, $dataSourceIds: [Int!]) {
-          nameResolver(names: $names, dataSourceIds: $dataSourceIds) {
+          nameResolver(names: $names, dataSourceIds: $dataSourceIds,
+                       advancedResolution: true) {
             responses {
               suppliedId suppliedInput
               results {

@@ -54,6 +54,7 @@ module GnListResolver
                          else
                            match_type_min.match_type.kind.to_sym
                          end
+      require "byebug"; byebug if @stats.stats[:matches][match_type_value].nil?
       @stats.stats[:matches][match_type_value] += 1
       @stats.stats[:resolved_records] += 1
     end

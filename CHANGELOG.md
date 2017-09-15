@@ -1,5 +1,13 @@
 # ``gn_list_resolver`` CHANGELOG
 
+## 3.3.1.1
+
+@dimus - add advancedResultion flag to GraphQL query
+
+## 3.3.1.0
+
+@dimus - concurrent resolution
+
 ## 3.2.0.4
 
 @dimus - make it possible for result.canonical to be nil
