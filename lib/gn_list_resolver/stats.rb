@@ -34,7 +34,7 @@ module GnListResolver
     end
 
     def eta_struct
-      { start_time: nil, completed_records: 0,
+      { start_time: nil, completed_records: 0, time_span: 0,
         speed: nil, eta: nil, stop_time: nil }
     end
 

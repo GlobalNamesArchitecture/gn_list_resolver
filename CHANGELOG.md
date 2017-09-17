@@ -25,6 +25,10 @@
 @dimus, @alexander-myltsev - sync with `gn_crossmap`'s 3.2.0, current name is
                              still a bit broken
 
+## 4.0.2
+
+* @dimus - Add resolution span_time to stats
+
 ## 4.0.1
 
 * @dimus - Clean up resolution stats
