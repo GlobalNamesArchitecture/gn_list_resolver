@@ -9,6 +9,8 @@ module GnListResolver
                  "http://index-api.globalnames.org/api/graphql"
   MATCH_TYPES = {
     EmptyMatch: "No match",
+    Match: "Match",
+    FuzzyMatch: "Fuzzy match",
     ExactNameMatchByUUID: "Exact string match",
     ExactCanonicalNameMatchByUUID: "Canonical form exact match",
     FuzzyCanonicalMatch: "Canonical form fuzzy match",
