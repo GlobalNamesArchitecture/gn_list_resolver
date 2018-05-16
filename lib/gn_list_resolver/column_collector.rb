@@ -62,8 +62,6 @@ module GnListResolver
       end
     end
 
-    # rubocop:disable Metrics/MethodLength
-
     def add_infrarank(name, rank)
       case rank
       when :species
