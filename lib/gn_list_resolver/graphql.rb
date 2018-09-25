@@ -14,15 +14,20 @@ module GnListResolver
           nameResolver(names: $names, dataSourceIds: $dataSourceIds,
                        advancedResolution: true) {
             responses {
-              suppliedId suppliedInput
+              total suppliedId suppliedInput
               results {
                 name { value }
                 canonicalName { value }
-                acceptedName { name { value } }
-                synonym
-                matchType { kind score editDistance }
-                taxonId classification { path pathRanks }
-                score { value parsingQuality }
+                resultsPerDataSource {
+                  results {
+                    acceptedName { name { value } }
+                    synonym
+                    matchType { kind score verbatimEditDistance }
+                    taxonId
+                    classification { path pathRanks }
+                    score { value parsingQuality }
+                  }
+                }
               }
             }
           }

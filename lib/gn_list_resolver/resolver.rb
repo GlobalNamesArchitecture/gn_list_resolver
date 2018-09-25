@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/ClassLength
-
 module GnListResolver
   # Sends data to GN Resolver and collects results
   class Resolver

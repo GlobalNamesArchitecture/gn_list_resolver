@@ -13,3 +13,9 @@ Layout/DotPosition:
   EnforcedStyle: trailing
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+Metrics/ClassLength:
+  Max: 150
+Metrics/MethodLength:
+  Max: 35
+Metrics/AbcSize:
+  Max: 20
