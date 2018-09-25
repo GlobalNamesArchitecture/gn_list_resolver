@@ -96,7 +96,7 @@ module GnListResolver
              result[:name],
              canonical(result[:supplied_input]),
              result[:canonical_name],
-             result[:match_type].edit_distance,
+             result[:match_type].verbatim_edit_distance,
              @input[result[:supplied_id]][:rank],
              matched_rank(result),
              result[:synonym],

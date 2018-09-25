@@ -22,7 +22,7 @@ module GnListResolver
                   results {
                     acceptedName { name { value } }
                     synonym
-                    matchType { kind score editDistance }
+                    matchType { kind score verbatimEditDistance }
                     taxonId
                     classification { path pathRanks }
                     score { value parsingQuality }
